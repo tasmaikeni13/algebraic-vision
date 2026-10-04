@@ -1,0 +1,108 @@
+{
+ "config": {
+  "name": "p8_smoke_v3",
+  "arm": "algebraic",
+  "model": {},
+  "loss": "power",
+  "label_smoothing": 0.1,
+  "power_alpha_exponent": -6,
+  "power_order": 64,
+  "power_normalize": "none",
+  "power_eps": 1.0,
+  "data_root": "/dev/shm/data/in256",
+  "image_size": 224,
+  "crop_scale_min": 0.35,
+  "batch_size": 1024,
+  "total_images": 0,
+  "total_steps": 60,
+  "lr": 0.001,
+  "warmup_steps": 20,
+  "end_lr": 0.0,
+  "weight_decay": 0.05,
+  "b1": 0.9,
+  "b2": 0.999,
+  "grad_clip": 1.0,
+  "seed": 42,
+  "log_every": 20,
+  "eval_every": 0,
+  "eval_batch": 1024,
+  "output": "results/p5/smoke_b16_v3.json",
+  "save_params": "",
+  "checkpoint_dir": "",
+  "checkpoint_every": 0,
+  "distributed": true
+ },
+ "model_config": {
+  "image_size": 224,
+  "patch_size": 16,
+  "channels": 3,
+  "num_classes": 1000,
+  "width": 768,
+  "depth": 12,
+  "heads": 12,
+  "mlp_dim": 3072,
+  "pool": "gap",
+  "posemb": "learned",
+  "rotary": "cayley2d_mixed",
+  "attention": "radical",
+  "order": 8,
+  "temperature": 1.0,
+  "sink": "none",
+  "sink_init": 0.0,
+  "activation": "rgelu",
+  "alu_c": 0.7978845608028654,
+  "act_beta": 1.702,
+  "act_order": 8,
+  "glu": false,
+  "compute_dtype": "bfloat16",
+  "remat": false
+ },
+ "params": 86575336,
+ "steps": 60,
+ "images_seen": 61440,
+ "patch_tokens_seen": 12042240,
+ "nonfinite_steps": 0,
+ "train_images_per_sec": 8945.012690238484,
+ "devices": 16,
+ "processes": 4,
+ "device_kind": "TPU v4",
+ "jax_version": "0.6.2",
+ "git_commit": "fb8ea091af3b0ebd3c2db6155842c87662b967d8",
+ "history": [
+  {
+   "step": 20,
+   "loss": 6.235577487945557,
+   "grad_norm": 0.907470977306366,
+   "train_top1": 0.003515625,
+   "lr": 0.0009500000160187483
+  },
+  {
+   "step": 40,
+   "loss": 6.116156840324402,
+   "grad_norm": 0.6615473330020905,
+   "train_top1": 0.004345703125,
+   "lr": 0.0005392296006903052
+  },
+  {
+   "step": 60,
+   "loss": 6.058117604255676,
+   "grad_norm": 0.6412360280752182,
+   "train_top1": 0.006494140625,
+   "lr": 1.5413165783684235e-06
+  }
+ ],
+ "results": {
+  "minival": {
+   "images": 10000,
+   "top1": 0.0067,
+   "nll": 6.6140359375,
+   "ece": 0.00036571388244628904
+  },
+  "val": {
+   "images": 50000,
+   "top1": 0.00656,
+   "nll": 6.619916875,
+   "ece": 0.000310279541015625
+  }
+ }
+}

@@ -1,0 +1,600 @@
+{
+ "gaussian": {
+  "softmax": [
+   {
+    "alpha": 1,
+    "entropy": 0.9070264673157655,
+    "entropy_p01": 0.8549339036525619,
+    "max_weight": 0.051439715236926,
+    "jacobian_fro": 0.11198034165450979,
+    "jacobian_median": 0.10959322244149493,
+    "saturated_rows": 0.0
+   },
+   {
+    "alpha": 2,
+    "entropy": 0.6722848562044463,
+    "entropy_p01": 0.3532236275857619,
+    "max_weight": 0.20517767112282587,
+    "jacobian_fro": 0.2233530760370595,
+    "jacobian_median": 0.21903983225826248,
+    "saturated_rows": 0.0
+   },
+   {
+    "alpha": 4,
+    "entropy": 0.32182851798375633,
+    "entropy_p01": 0.01712211157532601,
+    "max_weight": 0.5202899964717356,
+    "jacobian_fro": 0.29612545519634925,
+    "jacobian_median": 0.31890246691820845,
+    "saturated_rows": 0.0
+   },
+   {
+    "alpha": 8,
+    "entropy": 0.13400130917058867,
+    "entropy_p01": 7.371405262393012e-05,
+    "max_weight": 0.7566334895807869,
+    "jacobian_fro": 0.22981618738390894,
+    "jacobian_median": 0.24701684863898193,
+    "saturated_rows": 0.013399999588727951
+   },
+   {
+    "alpha": 16,
+    "entropy": 0.05990831118728909,
+    "entropy_p01": 2.4231955925606688e-09,
+    "max_weight": 0.87931668287238,
+    "jacobian_fro": 0.14068824625759155,
+    "jacobian_median": 0.04391590809155207,
+    "saturated_rows": 0.15199999511241913
+   },
+   {
+    "alpha": 32,
+    "entropy": 0.0282586512410563,
+    "entropy_p01": 1.4673453455252229e-18,
+    "max_weight": 0.9400243398625481,
+    "jacobian_fro": 0.07754024909284161,
+    "jacobian_median": 0.0008741693431997442,
+    "saturated_rows": 0.40619999170303345
+   },
+   {
+    "alpha": 64,
+    "entropy": 0.013752301489024087,
+    "entropy_p01": 4.1863047418290436e-37,
+    "max_weight": 0.9698928244770012,
+    "jacobian_fro": 0.04085736569787859,
+    "jacobian_median": 3.486378778549419e-07,
+    "saturated_rows": 0.6471999883651733
+   },
+   {
+    "alpha": 128,
+    "entropy": 0.006879121173969846,
+    "entropy_p01": 2.1381035555470636e-74,
+    "max_weight": 0.9846414616747813,
+    "jacobian_fro": 0.021386341175616247,
+    "jacobian_median": 5.010608292274774e-14,
+    "saturated_rows": 0.8066999912261963
+   }
+  ],
+  "radical_n8": [
+   {
+    "alpha": 1,
+    "entropy": 0.9095289665443345,
+    "entropy_p01": 0.8641686226432727,
+    "max_weight": 0.048800660138775036,
+    "jacobian_fro": 0.10706928195608008,
+    "jacobian_median": 0.1055538642912335,
+    "saturated_rows": 0.0
+   },
+   {
+    "alpha": 2,
+    "entropy": 0.7124869096034134,
+    "entropy_p01": 0.496454298309452,
+    "max_weight": 0.16259557956410628,
+    "jacobian_fro": 0.1749504534157142,
+    "jacobian_median": 0.1726534487487056,
+    "saturated_rows": 0.0
+   },
+   {
+    "alpha": 4,
+    "entropy": 0.47545970419051287,
+    "entropy_p01": 0.1824802611662492,
+    "max_weight": 0.33552718203045495,
+    "jacobian_fro": 0.18356953070895476,
+    "jacobian_median": 0.18639534669343966,
+    "saturated_rows": 0.0
+   },
+   {
+    "alpha": 8,
+    "entropy": 0.37073216945339194,
+    "entropy_p01": 0.09589697904303937,
+    "max_weight": 0.427791956116535,
+    "jacobian_fro": 0.11895628491627361,
+    "jacobian_median": 0.12472866398023186,
+    "saturated_rows": 0.0
+   },
+   {
+    "alpha": 16,
+    "entropy": 0.3408006361812623,
+    "entropy_p01": 0.0782820444901361,
+    "max_weight": 0.4568855436132248,
+    "jacobian_fro": 0.06395558454750945,
+    "jacobian_median": 0.06768351832929911,
+    "saturated_rows": 0.0
+   },
+   {
+    "alpha": 32,
+    "entropy": 0.33308209790223997,
+    "entropy_p01": 0.07399305877173604,
+    "max_weight": 0.46463135439542724,
+    "jacobian_fro": 0.03258393033453854,
+    "jacobian_median": 0.034548211261421075,
+    "saturated_rows": 0.0
+   },
+   {
+    "alpha": 64,
+    "entropy": 0.3311377433254219,
+    "entropy_p01": 0.07289118440548571,
+    "max_weight": 0.4665993674364705,
+    "jacobian_fro": 0.016369334680165402,
+    "jacobian_median": 0.017362348467328453,
+    "saturated_rows": 0.0
+   },
+   {
+    "alpha": 128,
+    "entropy": 0.33065073444846177,
+    "entropy_p01": 0.07262959657308593,
+    "max_weight": 0.46709337830010356,
+    "jacobian_fro": 0.008194389942035748,
+    "jacobian_median": 0.008692695534472621,
+    "saturated_rows": 0.0
+   }
+  ],
+  "radical_n8_sink1": [
+   {
+    "alpha": 1,
+    "entropy": 0.9095289665443345,
+    "entropy_p01": 0.8641686226432729,
+    "max_weight": 0.04864999736929077,
+    "jacobian_fro": 0.10674060011685145,
+    "jacobian_median": 0.10522043863539002,
+    "saturated_rows": 0.0
+   },
+   {
+    "alpha": 2,
+    "entropy": 0.7124869096034134,
+    "entropy_p01": 0.4964542983094519,
+    "max_weight": 0.16245928510031027,
+    "jacobian_fro": 0.17480861028727723,
+    "jacobian_median": 0.17249889204619043,
+    "saturated_rows": 0.0
+   },
+   {
+    "alpha": 4,
+    "entropy": 0.4754597041905129,
+    "entropy_p01": 0.18248026116624924,
+    "max_weight": 0.3355136157625001,
+    "jacobian_fro": 0.1835623600828883,
+    "jacobian_median": 0.18639296291194107,
+    "saturated_rows": 0.0
+   },
+   {
+    "alpha": 8,
+    "entropy": 0.37073216945339194,
+    "entropy_p01": 0.09589697904303936,
+    "max_weight": 0.4277917657893702,
+    "jacobian_fro": 0.11895623200121011,
+    "jacobian_median": 0.12472862647544303,
+    "saturated_rows": 0.0
+   },
+   {
+    "alpha": 16,
+    "entropy": 0.3408006361812623,
+    "entropy_p01": 0.0782820444901361,
+    "max_weight": 0.45688554251742763,
+    "jacobian_fro": 0.06395558439117503,
+    "jacobian_median": 0.0676835181821703,
+    "saturated_rows": 0.0
+   },
+   {
+    "alpha": 32,
+    "entropy": 0.33308209790223997,
+    "entropy_p01": 0.073993058771736,
+    "max_weight": 0.4646313543906812,
+    "jacobian_fro": 0.032583930334197264,
+    "jacobian_median": 0.03454821126099486,
+    "saturated_rows": 0.0
+   },
+   {
+    "alpha": 64,
+    "entropy": 0.3311377433254219,
+    "entropy_p01": 0.07289118440548573,
+    "max_weight": 0.4665993674364514,
+    "jacobian_fro": 0.01636933468016472,
+    "jacobian_median": 0.017362348467327836,
+    "saturated_rows": 0.0
+   },
+   {
+    "alpha": 128,
+    "entropy": 0.3306507344484618,
+    "entropy_p01": 0.07262959657308593,
+    "max_weight": 0.46709337830010345,
+    "jacobian_fro": 0.008194389942035746,
+    "jacobian_median": 0.008692695534472621,
+    "saturated_rows": 0.0
+   }
+  ],
+  "radical_n16": [
+   {
+    "alpha": 1,
+    "entropy": 0.9076891255007173,
+    "entropy_p01": 0.8574332631989894,
+    "max_weight": 0.05073070198870047,
+    "jacobian_fro": 0.11064101697450074,
+    "jacobian_median": 0.10850861625407156,
+    "saturated_rows": 0.0
+   },
+   {
+    "alpha": 2,
+    "entropy": 0.6844033883707956,
+    "entropy_p01": 0.39750766954633415,
+    "max_weight": 0.19208856466653307,
+    "jacobian_fro": 0.20814828677415412,
+    "jacobian_median": 0.2044309294030906,
+    "saturated_rows": 0.0
+   },
+   {
+    "alpha": 4,
+    "entropy": 0.37324015267397376,
+    "entropy_p01": 0.05120650611405399,
+    "max_weight": 0.4557628950043982,
+    "jacobian_fro": 0.25560705655014526,
+    "jacobian_median": 0.26919402249137825,
+    "saturated_rows": 0.0
+   },
+   {
+    "alpha": 8,
+    "entropy": 0.2210201371203079,
+    "entropy_p01": 0.007561668392594476,
+    "max_weight": 0.6246840089873045,
+    "jacobian_fro": 0.182350822471319,
+    "jacobian_median": 0.21587803488120466,
+    "saturated_rows": 0.0
+   },
+   {
+    "alpha": 16,
+    "entropy": 0.17412598433916404,
+    "entropy_p01": 0.002673057224900579,
+    "max_weight": 0.6864530906907128,
+    "jacobian_fro": 0.10238817439853104,
+    "jacobian_median": 0.11986857743604085,
+    "saturated_rows": 0.0010999999940395355
+   },
+   {
+    "alpha": 32,
+    "entropy": 0.1615132242110208,
+    "entropy_p01": 0.0017952381206646118,
+    "max_weight": 0.70417189458939,
+    "jacobian_fro": 0.05289882726385371,
+    "jacobian_median": 0.060791966598889864,
+    "saturated_rows": 0.004799999762326479
+   },
+   {
+    "alpha": 64,
+    "entropy": 0.15828914520554296,
+    "entropy_p01": 0.001590064526857278,
+    "max_weight": 0.7087859849798683,
+    "jacobian_fro": 0.02667571977187613,
+    "jacobian_median": 0.030457595143246467,
+    "saturated_rows": 0.008700000122189522
+   },
+   {
+    "alpha": 128,
+    "entropy": 0.1574783288032771,
+    "entropy_p01": 0.0015405851706505763,
+    "max_weight": 0.7099519939167984,
+    "jacobian_fro": 0.013366606397780157,
+    "jacobian_median": 0.015240091790134117,
+    "saturated_rows": 0.0142000000923872
+   }
+  ]
+ },
+ "student_t3": {
+  "softmax": [
+   {
+    "alpha": 1,
+    "entropy": 0.4212387605510231,
+    "entropy_p01": 2.64417949902998e-09,
+    "max_weight": 0.5338826023061088,
+    "jacobian_fro": 0.19998353652338238,
+    "jacobian_median": 0.21945286439015615,
+    "saturated_rows": 0.046299997717142105
+   },
+   {
+    "alpha": 2,
+    "entropy": 0.13688624051706882,
+    "entropy_p01": 5.312982582858737e-19,
+    "max_weight": 0.789497071501888,
+    "jacobian_fro": 0.17290240717217034,
+    "jacobian_median": 0.13305329350173545,
+    "saturated_rows": 0.14649999141693115
+   },
+   {
+    "alpha": 4,
+    "entropy": 0.051392131833133424,
+    "entropy_p01": 4.3854425014028054e-38,
+    "max_weight": 0.9007904720802316,
+    "jacobian_fro": 0.10946060385540335,
+    "jacobian_median": 0.00734602818084371,
+    "saturated_rows": 0.3227999806404114
+   },
+   {
+    "alpha": 8,
+    "entropy": 0.02337289865331541,
+    "entropy_p01": 2.1934384655021618e-76,
+    "max_weight": 0.9506067921961329,
+    "jacobian_fro": 0.06232171958617643,
+    "jacobian_median": 2.1564507569099122e-05,
+    "saturated_rows": 0.5439000129699707
+   },
+   {
+    "alpha": 16,
+    "entropy": 0.011488056748436339,
+    "entropy_p01": 2.8701373454142525e-153,
+    "max_weight": 0.9749025192687135,
+    "jacobian_fro": 0.03380595388044825,
+    "jacobian_median": 1.8771819688084948e-10,
+    "saturated_rows": 0.726099967956543
+   },
+   {
+    "alpha": 32,
+    "entropy": 0.0057685432987560105,
+    "entropy_p01": -0.0,
+    "max_weight": 0.9872956905071238,
+    "jacobian_fro": 0.01762264980756928,
+    "jacobian_median": 1.644893135440789e-20,
+    "saturated_rows": 0.8450999855995178
+   },
+   {
+    "alpha": 64,
+    "entropy": 0.0028886327143530393,
+    "entropy_p01": -0.0,
+    "max_weight": 0.9935865131467351,
+    "jacobian_fro": 0.009057377945094019,
+    "jacobian_median": 1.8059435606321327e-40,
+    "saturated_rows": 0.914900004863739
+   },
+   {
+    "alpha": 128,
+    "entropy": 0.0014609638339715184,
+    "entropy_p01": -0.0,
+    "max_weight": 0.9967770447402111,
+    "jacobian_fro": 0.004636659773110891,
+    "jacobian_median": 2.306336551653316e-80,
+    "saturated_rows": 0.9562000036239624
+   }
+  ],
+  "radical_n8": [
+   {
+    "alpha": 1,
+    "entropy": 0.4923724396771529,
+    "entropy_p01": 0.0003658599637099095,
+    "max_weight": 0.46015617525849806,
+    "jacobian_fro": 0.16951058205858713,
+    "jacobian_median": 0.18852174904639996,
+    "saturated_rows": 0.011099999770522118
+   },
+   {
+    "alpha": 2,
+    "entropy": 0.23305577985396322,
+    "entropy_p01": 3.7555213592447564e-05,
+    "max_weight": 0.6651240126277396,
+    "jacobian_fro": 0.1392172458484557,
+    "jacobian_median": 0.16912276835405773,
+    "saturated_rows": 0.02499999850988388
+   },
+   {
+    "alpha": 4,
+    "entropy": 0.15620675883664453,
+    "entropy_p01": 1.7834738493026787e-05,
+    "max_weight": 0.7358757887188735,
+    "jacobian_fro": 0.08192287892870834,
+    "jacobian_median": 0.08282600569129128,
+    "saturated_rows": 0.03959999978542328
+   },
+   {
+    "alpha": 8,
+    "entropy": 0.1386339392241415,
+    "entropy_p01": 1.2940423377891607e-05,
+    "max_weight": 0.754888510307531,
+    "jacobian_fro": 0.04287620773034388,
+    "jacobian_median": 0.04032713698184323,
+    "saturated_rows": 0.054899998009204865
+   },
+   {
+    "alpha": 16,
+    "entropy": 0.1343936341104098,
+    "entropy_p01": 1.1554347351381544e-05,
+    "max_weight": 0.7597550311353695,
+    "jacobian_fro": 0.021696210703074394,
+    "jacobian_median": 0.02001771976597333,
+    "saturated_rows": 0.07050000131130219
+   },
+   {
+    "alpha": 32,
+    "entropy": 0.1333428264953426,
+    "entropy_p01": 1.1317890978783406e-05,
+    "max_weight": 0.7609800668595599,
+    "jacobian_fro": 0.01088107599795475,
+    "jacobian_median": 0.009986173703419443,
+    "saturated_rows": 0.0908999964594841
+   },
+   {
+    "alpha": 64,
+    "entropy": 0.1330806896330989,
+    "entropy_p01": 1.125954101015971e-05,
+    "max_weight": 0.7612868783527336,
+    "jacobian_fro": 0.0054446826753392855,
+    "jacobian_median": 0.004990225745370304,
+    "saturated_rows": 0.1160999983549118
+   },
+   {
+    "alpha": 128,
+    "entropy": 0.1330151904652483,
+    "entropy_p01": 1.124499089314818e-05,
+    "max_weight": 0.7613636162173525,
+    "jacobian_fro": 0.002722860162241901,
+    "jacobian_median": 0.002495100371157752,
+    "saturated_rows": 0.15049999952316284
+   }
+  ],
+  "radical_n8_sink1": [
+   {
+    "alpha": 1,
+    "entropy": 0.4923724396771528,
+    "entropy_p01": 0.0003658599637098676,
+    "max_weight": 0.4598993271208274,
+    "jacobian_fro": 0.1693813252545077,
+    "jacobian_median": 0.1884041794290617,
+    "saturated_rows": 0.011099999770522118
+   },
+   {
+    "alpha": 2,
+    "entropy": 0.23305577985396322,
+    "entropy_p01": 3.755521359244714e-05,
+    "max_weight": 0.6650970877489395,
+    "jacobian_fro": 0.13920803190465988,
+    "jacobian_median": 0.16909833792577195,
+    "saturated_rows": 0.02499999850988388
+   },
+   {
+    "alpha": 4,
+    "entropy": 0.15620675883664453,
+    "entropy_p01": 1.7834738493047587e-05,
+    "max_weight": 0.7358753014600316,
+    "jacobian_fro": 0.08192277068121961,
+    "jacobian_median": 0.08282600473244384,
+    "saturated_rows": 0.03959999978542328
+   },
+   {
+    "alpha": 8,
+    "entropy": 0.1386339392241415,
+    "entropy_p01": 1.2940423377891397e-05,
+    "max_weight": 0.7548885070382974,
+    "jacobian_fro": 0.042876207322490714,
+    "jacobian_median": 0.04032713738423112,
+    "saturated_rows": 0.054899998009204865
+   },
+   {
+    "alpha": 16,
+    "entropy": 0.1343936341104098,
+    "entropy_p01": 1.1554347351402346e-05,
+    "max_weight": 0.7597550311204606,
+    "jacobian_fro": 0.02169621070210987,
+    "jacobian_median": 0.02001771976660108,
+    "saturated_rows": 0.07050000131130219
+   },
+   {
+    "alpha": 32,
+    "entropy": 0.1333428264953426,
+    "entropy_p01": 1.1317890978783406e-05,
+    "max_weight": 0.760980066859499,
+    "jacobian_fro": 0.01088107599795277,
+    "jacobian_median": 0.009986173703419924,
+    "saturated_rows": 0.0908999964594841
+   },
+   {
+    "alpha": 64,
+    "entropy": 0.1330806896330989,
+    "entropy_p01": 1.125954101015971e-05,
+    "max_weight": 0.7612868783527335,
+    "jacobian_fro": 0.005444682675339282,
+    "jacobian_median": 0.004990225745370304,
+    "saturated_rows": 0.1160999983549118
+   },
+   {
+    "alpha": 128,
+    "entropy": 0.1330151904652483,
+    "entropy_p01": 1.124499089314818e-05,
+    "max_weight": 0.7613636162173525,
+    "jacobian_fro": 0.002722860162241901,
+    "jacobian_median": 0.002495100371157752,
+    "saturated_rows": 0.15049999952316284
+   }
+  ],
+  "radical_n16": [
+   {
+    "alpha": 1,
+    "entropy": 0.44102212488274656,
+    "entropy_p01": 2.460107790161212e-06,
+    "max_weight": 0.5130870943327277,
+    "jacobian_fro": 0.19120953259363938,
+    "jacobian_median": 0.21121772943252967,
+    "saturated_rows": 0.02929999865591526
+   },
+   {
+    "alpha": 2,
+    "entropy": 0.16447417217677598,
+    "entropy_p01": 1.0327410794053879e-08,
+    "max_weight": 0.7515264407442508,
+    "jacobian_fro": 0.16250570271732298,
+    "jacobian_median": 0.1640774965039447,
+    "saturated_rows": 0.08379999548196793
+   },
+   {
+    "alpha": 4,
+    "entropy": 0.08509372148959556,
+    "entropy_p01": 3.6214970323794075e-10,
+    "max_weight": 0.8426812357882886,
+    "jacobian_fro": 0.09913465231766028,
+    "jacobian_median": 0.04706761665997818,
+    "saturated_rows": 0.14919999241828918
+   },
+   {
+    "alpha": 8,
+    "entropy": 0.06544986784590044,
+    "entropy_p01": 8.716111503188278e-11,
+    "max_weight": 0.8714897411569169,
+    "jacobian_fro": 0.05316960083805888,
+    "jacobian_median": 0.015831590227492878,
+    "saturated_rows": 0.20189999043941498
+   },
+   {
+    "alpha": 16,
+    "entropy": 0.06033999214665005,
+    "entropy_p01": 5.348008653735501e-11,
+    "max_weight": 0.8796204677830469,
+    "jacobian_fro": 0.02715887889125544,
+    "jacobian_median": 0.006888441773184552,
+    "saturated_rows": 0.24069999158382416
+   },
+   {
+    "alpha": 32,
+    "entropy": 0.05903701112626452,
+    "entropy_p01": 4.809177822709675e-11,
+    "max_weight": 0.88173986022503,
+    "jacobian_fro": 0.013657551076161414,
+    "jacobian_median": 0.003304298994602781,
+    "saturated_rows": 0.27219998836517334
+   },
+   {
+    "alpha": 64,
+    "entropy": 0.058709325351549956,
+    "entropy_p01": 4.6739684495437686e-11,
+    "max_weight": 0.8822758846723415,
+    "jacobian_fro": 0.0068387754598515415,
+    "jacobian_median": 0.0016245201792321191,
+    "saturated_rows": 0.3043999969959259
+   },
+   {
+    "alpha": 128,
+    "entropy": 0.05862727623660818,
+    "entropy_p01": 4.6079865381925817e-11,
+    "max_weight": 0.8824102908649749,
+    "jacobian_fro": 0.00342064546851951,
+    "jacobian_median": 0.0008101482757893793,
+    "saturated_rows": 0.3425000011920929
+   }
+  ]
+ },
+ "entropy_floor": true,
+ "mean_jacobian_10x_softmax": false
+}

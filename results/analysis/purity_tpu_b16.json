@@ -1,0 +1,41 @@
+{
+ "backend": "tpu",
+ "device_kind": "TPU v4",
+ "standard": {
+  "arm": "standard",
+  "loss": "ce",
+  "model": {
+   "rotary": "none",
+   "attention": "softmax",
+   "order": 8,
+   "sink": "none",
+   "activation": "gelu"
+  },
+  "transcendental_ops": {
+   "exponential": 40,
+   "log": 1
+  },
+  "opcode_count": 34,
+  "rsqrt": 50,
+  "sqrt": 0,
+  "divide": 98
+ },
+ "algebraic": {
+  "arm": "algebraic",
+  "loss": "power",
+  "model": {
+   "rotary": "cayley2d_mixed",
+   "attention": "radical",
+   "order": 8,
+   "sink": "none",
+   "activation": "rgelu"
+  },
+  "transcendental_ops": {},
+  "opcode_count": 37,
+  "rsqrt": 208,
+  "sqrt": 0,
+  "divide": 265
+ },
+ "algebraic_pure": true,
+ "standard_uses_transcendentals": true
+}

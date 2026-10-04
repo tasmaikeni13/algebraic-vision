@@ -1,0 +1,45 @@
+{
+ "device": "TPU v4",
+ "shapes": {
+  "pilot ViT-S/4@64": {
+   "softmax/xla": {
+    "fwd_ms": 0.48112793204685056,
+    "fwd_bwd_ms": 1.2484295681739848
+   },
+   "softmax/pallas": {
+    "fwd_ms": 0.4999742998431126,
+    "fwd_bwd_ms": 1.147909602150321,
+    "max_abs_err_vs_xla": 0.001953125
+   },
+   "radical/xla": {
+    "fwd_ms": 1.1463082317883768,
+    "fwd_bwd_ms": 2.3217311361804605
+   },
+   "radical/pallas": {
+    "fwd_ms": 0.5735686281695962,
+    "fwd_bwd_ms": 1.4113775299241145,
+    "max_abs_err_vs_xla": 0.001953125
+   }
+  },
+  "main ViT-B/16@224": {
+   "softmax/xla": {
+    "fwd_ms": 0.3976336680352688,
+    "fwd_bwd_ms": 1.0346745684122047
+   },
+   "softmax/pallas": {
+    "fwd_ms": 0.3907856376220783,
+    "fwd_bwd_ms": 0.8914439395690958,
+    "max_abs_err_vs_xla": 0.001953125
+   },
+   "radical/xla": {
+    "fwd_ms": 0.9275578971331319,
+    "fwd_bwd_ms": 1.8872191741441688
+   },
+   "radical/pallas": {
+    "fwd_ms": 0.4814253033449252,
+    "fwd_bwd_ms": 1.1315458997463188,
+    "max_abs_err_vs_xla": 0.001953125
+   }
+  }
+ }
+}

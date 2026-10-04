@@ -1,0 +1,3 @@
+# TPU hosts: the shared environment plus the TPU runtime.
+-r requirements.txt
+libtpu==0.0.17

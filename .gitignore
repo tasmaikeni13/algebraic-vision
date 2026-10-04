@@ -1,0 +1,24 @@
+# Python
+**/__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+
+# Lean build output
+formal/.lake/
+
+# LaTeX build output
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.log
+paper/*.out
+
+# Launcher scratch files: per-job configs and logs (results JSON are kept)
+results/configs/
+results/logs/
+results/**/*.log
+
+# Editors and OS
+.DS_Store
+*.swp

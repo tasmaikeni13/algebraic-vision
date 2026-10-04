@@ -1,0 +1,49 @@
+{
+ "learning_rates": [
+  0.0005,
+  0.001,
+  0.002
+ ],
+ "seeds": [
+  42,
+  43,
+  44
+ ],
+ "steps": 2990,
+ "images": 3061760,
+ "patch_tokens": 600104960,
+ "base": {
+  "data_root": "/dev/shm/data/in256",
+  "image_size": 224,
+  "model": {},
+  "batch_size": 1024,
+  "total_images": 3061225,
+  "warmup_steps": 1196,
+  "weight_decay": 0.05,
+  "b2": 0.999,
+  "grad_clip": 1.0,
+  "label_smoothing": 0.1,
+  "crop_scale_min": 0.35,
+  "log_every": 100,
+  "eval_batch": 1024
+ },
+ "arms": {
+  "standard": {
+   "arm": "standard"
+  },
+  "algebraic": {
+   "arm": "algebraic",
+   "loss": "power",
+   "power_alpha_exponent": -6,
+   "power_order": 64
+  }
+ },
+ "baseline_extension": {
+  "standard_learning_rates": [
+   0.00025,
+   0.00035,
+   0.0007
+  ],
+  "reason": "after seed 42 the standard arm's best candidate sat at the lower edge of the grid (5e-4: 26.2 val; 1e-3: 15.4; 2e-3: 1.6); the grid is extended downward for the standard arm only, so it cannot be under-tuned. Selection rule unchanged. After lr 3.5e-4 came out below 5e-4 (seed 42: 24.70 vs 26.20 val), lr 7e-4 was added to probe the other side of the optimum (1e-3 already collapses to 13.9)."
+ }
+}
