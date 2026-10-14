@@ -2,7 +2,8 @@
 
 [`phase1/REPORT.md`](phase1/REPORT.md) contains the v2 Phase 1 investigation,
 its reproducible numerical evidence and figures, formal/test validation, and
-a **NO-GO** decision. It does not approve or implement later phases.
+the final candidate's scoped gate decision. Rejected iterations remain in
+[`phase1/iterations_0_2.md`](phase1/iterations_0_2.md). Later phases are unstarted.
 
 Every training run writes one JSON record: the full training and model
 configuration, training metrics at regular intervals (with minival top-1

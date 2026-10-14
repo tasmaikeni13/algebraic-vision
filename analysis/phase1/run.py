@@ -2,7 +2,7 @@
 
     python -m analysis.phase1.run
     python -m analysis.phase1.run --sections symbolic,precision
-    python -m analysis.phase1.run --require-pass  # exit 2 on research NO-GO
+    python -m analysis.phase1.run --report-only --require-pass
 """
 
 import argparse
@@ -51,10 +51,11 @@ def main():
     parser.add_argument("--prototype-seeds",type=int,nargs="+",default=[42,43,44])
     parser.add_argument("--steps",type=int,default=200)
     parser.add_argument("--require-pass",action="store_true")
+    parser.add_argument("--report-only",action="store_true",help="Validate cached evidence and rebuild the report without simulations")
     args=parser.parse_args()
     if args.steps<1 or not args.seeds or not args.prototype_seeds:
         parser.error("positive steps and nonempty seeds required")
-    sections=args.sections.split(",")
+    sections=[] if args.report_only else args.sections.split(",")
     if any(name not in SECTIONS for name in sections):
         parser.error(f"sections must be drawn from {SECTIONS}")
     from . import purity
@@ -79,6 +80,16 @@ def main():
         write(args.out/f"{section}.json",data)
         print(f"DONE {section}: {time.monotonic()-start:.1f}s",flush=True)
         jax.clear_caches()
+    if not args.report_only and set(sections)==set(SECTIONS):
+        # Run the final refinement separately so each section keeps its own
+        # immutable source snapshot and the original evidence stays intact.
+        import sys
+        cmd=[sys.executable,"-m","analysis.phase1.revision_study","--out",str(args.out),
+             "--steps",str(args.steps),"--seeds",*[str(s) for s in args.seeds],
+             "--prototype-seeds",*[str(s) for s in args.prototype_seeds]]
+        subprocess.run(cmd,check=True)
+        from .costs import run as count_costs
+        write(args.out/"costs.json",count_costs())
     if all((args.out/f"{name}.json").exists() for name in SECTIONS):
         from .report import build
         gate=build(args.out)

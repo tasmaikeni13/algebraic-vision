@@ -49,6 +49,7 @@ are imported by the same `lake build` target:
 | `V2Positions` | Nonzero homogeneous recurrence, projective orthogonality and determinant one, equality to Cayley powers, determinant-one paired SO(4) generators and relative-offset invariance, rank determinant for positive Cayley frequencies |
 | `V2Centroid` | Lift norm identity and the vector centroid bound `N^2 - norm(M)^2 >= N^2*d/(d+R)>0` when `norm(h_i)^2 <= R`, `d>0`, and `N>0` |
 | `V2Corrections` | Positivity and reciprocal symmetry of the rational-tail candidate, positive inverse-energy weights/denominator, weighted-centroid fixed points |
+| `V2Selection` | Bounded learned frequencies and nonzero rank, paired-phase zero-offset implication, rational softsign reflection/slope bounds, Padé polynomial certificate/Newton residual, affine batch-cost inequality |
 
 `centroid_denominator_max` explicitly specializes the bound to
 `R = max_i norm(h_i)^2` and proves the lower bound is strictly positive. Proofs do not assert
@@ -56,3 +57,8 @@ floating-point exactness, arbitrary-frequency injectivity, or optimization
 dominance. `analysis.phase1.verify` builds this target and generates an axiom
 audit for every locally declared theorem and lemma, preserving the original
 proofs in that audit. Only standard Lean axioms are accepted.
+
+The softsign derivative formulas and C2 matching are checked symbolically and
+numerically; Lean bounds the stated slope profile. The affine inequality is a
+real-algebra lemma, while source-program operation counts are audited in
+Python. Neither is a formal verification of a hardware compiler.

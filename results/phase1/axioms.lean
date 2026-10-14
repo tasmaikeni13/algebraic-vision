@@ -79,3 +79,12 @@ import AlgebraicVision
 #print axioms AlgebraicVision.V2.bicayley_relative
 #print axioms AlgebraicVision.V2.tied_rank_nonzero
 #print axioms AlgebraicVision.V2.tied_cayley_angle_rank
+#print axioms AlgebraicVision.V2.bounded_frequency_bounds
+#print axioms AlgebraicVision.V2.bounded_frequency_rank
+#print axioms AlgebraicVision.V2.paired_phases_zero
+#print axioms AlgebraicVision.V2.softsign_gate_zero
+#print axioms AlgebraicVision.V2.softsign_gate_reflection
+#print axioms AlgebraicVision.V2.softsign_slope_bounds
+#print axioms AlgebraicVision.V2.pade_residual_certificate
+#print axioms AlgebraicVision.V2.newton_residual
+#print axioms AlgebraicVision.V2.affine_cost_nonpositive

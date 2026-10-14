@@ -409,7 +409,12 @@ The self-correction loop has produced improved candidates and concrete remaining
 
 From the repository root, create an environment using `requirements-phase1.txt`, then run `python -m analysis.phase1.run` and `python -m analysis.phase1.verify`. Run `python -m analysis.phase1.run --require-pass` to receive exit status 2 when the research gate is not satisfied. Results are deterministic for the recorded seeds on the recorded CPU/JAX versions; execution times and plots' PDF metadata may differ. Full references and a requirement/evidence checklist are in [the research README](../../analysis/phase1/README.md). [manifest.json](manifest.json) hashes generated artifacts; each data file independently hashes its research dependencies.
 """
+    (out/"iterations_0_2.md").write_text("Historical record of iterations 0–2. See [REPORT.md](REPORT.md) for the current refined candidate and decision.\n\n"+text)
     (out/"REPORT.md").write_text(text)
+    dump(out/"initial_gate.json",gate)
+    from .revision_report import finalize
+    gate=finalize(out,gate,data,validation)
+    dump(out/"gate.json",gate)
     files=[p for p in out.rglob("*") if p.is_file() and p.name!="manifest.json" and not p.name.endswith(".tmp")]
     dump(out/"manifest.json",{"artifacts":{str(p.relative_to(out)):{"sha256":hashlib.sha256(p.read_bytes()).hexdigest(),"bytes":p.stat().st_size} for p in sorted(files)},
                               "source_integrity_issues":integrity,"coverage_issues":coverage,"decision":gate["decision"]})

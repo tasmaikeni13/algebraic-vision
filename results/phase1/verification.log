@@ -1,12 +1,12 @@
 $ /home/tasma/algebraic-vision/.venv/bin/python -m pytest -q
-........................................................................ [ 85%]
-............                                                             [100%]
-84 passed in 92.92s (0:01:32)
+........................................................................ [ 73%]
+..........................                                               [100%]
+98 passed in 101.11s (0:01:41)
 
-exit=0; seconds=96.603
+exit=0; seconds=105.240
 
 $ /home/tasma/.elan/bin/lake build
-Build completed successfully (8890 jobs).
+Build completed successfully (8891 jobs).
 
 exit=0; seconds=4.450
 
@@ -90,5 +90,14 @@ $ /home/tasma/.elan/bin/lake env lean /home/tasma/algebraic-vision/results/phase
 'AlgebraicVision.V2.bicayley_relative' depends on axioms: [propext, Classical.choice, Quot.sound]
 'AlgebraicVision.V2.tied_rank_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
 'AlgebraicVision.V2.tied_cayley_angle_rank' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicVision.V2.bounded_frequency_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicVision.V2.bounded_frequency_rank' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicVision.V2.paired_phases_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicVision.V2.softsign_gate_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicVision.V2.softsign_gate_reflection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicVision.V2.softsign_slope_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicVision.V2.pade_residual_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicVision.V2.newton_residual' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AlgebraicVision.V2.affine_cost_nonpositive' depends on axioms: [propext, Classical.choice, Quot.sound]
 
-exit=0; seconds=6.329
+exit=0; seconds=6.342

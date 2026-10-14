@@ -1,10 +1,11 @@
 # Algebraic Vision
 
 Phase 1 v2 research is available in [`analysis/phase1/`](analysis/phase1/).
-The [analytical report](results/phase1/REPORT.md) records a **NO-GO** against
-the requested strict dominance gate, with reproducible simulations and Lean
-proofs. The existing training models below remain frozen; no production v2
-arm or later-phase pipeline has been added.
+The [analytical report](results/phase1/REPORT.md) records the final candidate,
+its scoped comparison gate, reproducible simulations and Lean proofs.
+[theory.md](theory.md) explains the core v1/v2 equations and design decisions.
+The existing training models below remain frozen; no production v2 arm or
+later-phase pipeline has been added.
 
 A Vision Transformer whose forward pass, backward pass and training loss use
 only arithmetic, square roots and comparisons: no exponential, logarithm,

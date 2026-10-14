@@ -8,3 +8,4 @@ import AlgebraicVision.V2Positions
 import AlgebraicVision.V2Floor
 import AlgebraicVision.V2Centroid
 import AlgebraicVision.V2Corrections
+import AlgebraicVision.V2Selection

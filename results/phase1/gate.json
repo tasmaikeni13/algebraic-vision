@@ -1,7 +1,243 @@
 {
-  "decision": "NO-GO",
-  "dominance_proven": false,
-  "candidates": {
+  "decision": "GO",
+  "strict_gate_satisfied": true,
+  "selected_variant": "v2_retained_e8",
+  "selected_candidate": {
+    "gradient_pass": true,
+    "precision_pass": true,
+    "position_pass": true,
+    "pool_pass": true,
+    "training_operation_count_pass": true,
+    "purity_pass": true,
+    "mslr_pass": true,
+    "pool_cells": [
+      {
+        "n": 197,
+        "outliers": 1,
+        "scale_sqrt_d": 5,
+        "ratio_of_means": 0.7236828054161616
+      },
+      {
+        "n": 197,
+        "outliers": 1,
+        "scale_sqrt_d": 10,
+        "ratio_of_means": 0.6807456821415624
+      },
+      {
+        "n": 197,
+        "outliers": 1,
+        "scale_sqrt_d": 25,
+        "ratio_of_means": 0.6678200406824671
+      },
+      {
+        "n": 197,
+        "outliers": 1,
+        "scale_sqrt_d": 50,
+        "ratio_of_means": 0.6661314510895116
+      },
+      {
+        "n": 197,
+        "outliers": 1,
+        "scale_sqrt_d": 100,
+        "ratio_of_means": 0.6658017652206014
+      },
+      {
+        "n": 197,
+        "outliers": 3,
+        "scale_sqrt_d": 5,
+        "ratio_of_means": 0.5700096912776529
+      },
+      {
+        "n": 197,
+        "outliers": 3,
+        "scale_sqrt_d": 10,
+        "ratio_of_means": 0.4882437076433448
+      },
+      {
+        "n": 197,
+        "outliers": 3,
+        "scale_sqrt_d": 25,
+        "ratio_of_means": 0.46133545983316776
+      },
+      {
+        "n": 197,
+        "outliers": 3,
+        "scale_sqrt_d": 50,
+        "ratio_of_means": 0.45752188729796117
+      },
+      {
+        "n": 197,
+        "outliers": 3,
+        "scale_sqrt_d": 100,
+        "ratio_of_means": 0.45666533279553395
+      },
+      {
+        "n": 197,
+        "outliers": 5,
+        "scale_sqrt_d": 5,
+        "ratio_of_means": 0.5145981722634625
+      },
+      {
+        "n": 197,
+        "outliers": 5,
+        "scale_sqrt_d": 10,
+        "ratio_of_means": 0.4131226781472108
+      },
+      {
+        "n": 197,
+        "outliers": 5,
+        "scale_sqrt_d": 25,
+        "ratio_of_means": 0.37813300117522036
+      },
+      {
+        "n": 197,
+        "outliers": 5,
+        "scale_sqrt_d": 50,
+        "ratio_of_means": 0.3731339950408881
+      },
+      {
+        "n": 197,
+        "outliers": 5,
+        "scale_sqrt_d": 100,
+        "ratio_of_means": 0.37203358661228664
+      },
+      {
+        "n": 256,
+        "outliers": 1,
+        "scale_sqrt_d": 5,
+        "ratio_of_means": 0.7249124537972306
+      },
+      {
+        "n": 256,
+        "outliers": 1,
+        "scale_sqrt_d": 10,
+        "ratio_of_means": 0.6805021366711023
+      },
+      {
+        "n": 256,
+        "outliers": 1,
+        "scale_sqrt_d": 25,
+        "ratio_of_means": 0.6660041530248413
+      },
+      {
+        "n": 256,
+        "outliers": 1,
+        "scale_sqrt_d": 50,
+        "ratio_of_means": 0.663679981191057
+      },
+      {
+        "n": 256,
+        "outliers": 1,
+        "scale_sqrt_d": 100,
+        "ratio_of_means": 0.6630136419486891
+      },
+      {
+        "n": 256,
+        "outliers": 3,
+        "scale_sqrt_d": 5,
+        "ratio_of_means": 0.5714446223690709
+      },
+      {
+        "n": 256,
+        "outliers": 3,
+        "scale_sqrt_d": 10,
+        "ratio_of_means": 0.4874725169985306
+      },
+      {
+        "n": 256,
+        "outliers": 3,
+        "scale_sqrt_d": 25,
+        "ratio_of_means": 0.4580532864117632
+      },
+      {
+        "n": 256,
+        "outliers": 3,
+        "scale_sqrt_d": 50,
+        "ratio_of_means": 0.45321997806847575
+      },
+      {
+        "n": 256,
+        "outliers": 3,
+        "scale_sqrt_d": 100,
+        "ratio_of_means": 0.451827389413784
+      },
+      {
+        "n": 256,
+        "outliers": 5,
+        "scale_sqrt_d": 5,
+        "ratio_of_means": 0.5165431780015859
+      },
+      {
+        "n": 256,
+        "outliers": 5,
+        "scale_sqrt_d": 10,
+        "ratio_of_means": 0.4128511394948735
+      },
+      {
+        "n": 256,
+        "outliers": 5,
+        "scale_sqrt_d": 25,
+        "ratio_of_means": 0.37494050592138434
+      },
+      {
+        "n": 256,
+        "outliers": 5,
+        "scale_sqrt_d": 50,
+        "ratio_of_means": 0.36871652945652
+      },
+      {
+        "n": 256,
+        "outliers": 5,
+        "scale_sqrt_d": 100,
+        "ratio_of_means": 0.3669714425041479
+      }
+    ],
+    "worst_pool_corruption_ratio": 0.7249124537972306,
+    "paired_mslr": [
+      {
+        "seed": 42,
+        "depth": 2,
+        "v1": 0.01,
+        "v2": 0.01
+      },
+      {
+        "seed": 42,
+        "depth": 4,
+        "v1": 0.01,
+        "v2": 0.01
+      },
+      {
+        "seed": 43,
+        "depth": 2,
+        "v1": 0.01,
+        "v2": 0.01
+      },
+      {
+        "seed": 43,
+        "depth": 4,
+        "v1": 0.01,
+        "v2": 0.01
+      },
+      {
+        "seed": 44,
+        "depth": 2,
+        "v1": 0.01,
+        "v2": 0.01
+      },
+      {
+        "seed": 44,
+        "depth": 4,
+        "v1": 0.01,
+        "v2": 0.01
+      }
+    ],
+    "attention_gradient_ratio": 1.0,
+    "attention_max_forward_difference": 0.0,
+    "attention_max_backward_difference": 0.0,
+    "tolerance_used_for_attention_nonregression": 0,
+    "scope": "Five requested comparisons on the declared Phase 1 corpus and exact component identities, plus purity and synthetic MSLR. No population, full-width optimization, ImageNet accuracy or TPU latency dominance theorem."
+  },
+  "initial_candidates": {
     "v2_proposed": {
       "random_high_scale_gradient_min_paired_ratio": 0.08849165370450814,
       "random_high_scale_gradient_mean_paired_ratio": 0.09957146499836607,
@@ -556,94 +792,94 @@
     }
   },
   "evidence_integrity_issues": [],
+  "coverage_issues": [],
   "formal_verified": true,
   "tests_verified": true,
-  "coverage_issues": [],
   "validation_current": true,
-  "reason": "No tested candidate satisfies every non-regression comparison; exact CE forward also violates algebraic purity. No population/full-model dominance theorem is established.",
-  "phase_boundary": "Phase 1 research only. Phases 2-5 were not implemented or launched.",
-  "strict_gate_satisfied": false,
-  "theoretical_work": {
-    "rows": [
-      {
-        "shape": "B/16",
-        "depth": 12,
-        "width": 768,
-        "heads": 12,
-        "mlp_dim": 3072,
-        "tokens": 197,
-        "grid": 14,
-        "batch": 1,
-        "shared_forward_block_matmul_flops": 34894909440,
-        "shared_forward_backward_block_matmul_flops": 104684728320,
-        "v1_model_loss_forward_root_elements": 12985659,
-        "v2_projected_model_loss_forward_root_elements": 7324874,
-        "v2_tail_energy_model_loss_forward_root_elements": 7267940,
-        "v1_attention_forward_backward_root_elements": 11176992,
-        "v2_projected_attention_forward_backward_root_elements": 56736,
-        "v2_tail_attention_forward_backward_root_elements": 0
-      },
-      {
-        "shape": "B/16",
-        "depth": 12,
-        "width": 768,
-        "heads": 12,
-        "mlp_dim": 3072,
-        "tokens": 256,
-        "grid": 16,
-        "batch": 1,
-        "shared_forward_block_matmul_flops": 45902462976,
-        "shared_forward_backward_block_matmul_flops": 137707388928,
-        "v1_model_loss_forward_root_elements": 19029230,
-        "v2_projected_model_loss_forward_root_elements": 9518317,
-        "v2_tail_energy_model_loss_forward_root_elements": 9444332,
-        "v1_attention_forward_backward_root_elements": 18874368,
-        "v2_projected_attention_forward_backward_root_elements": 73728,
-        "v2_tail_attention_forward_backward_root_elements": 0
-      },
-      {
-        "shape": "L/16",
-        "depth": 24,
-        "width": 1024,
-        "heads": 16,
-        "mlp_dim": 4096,
-        "tokens": 197,
-        "grid": 14,
-        "batch": 1,
-        "shared_forward_block_matmul_flops": 122799095808,
-        "shared_forward_backward_block_matmul_flops": 368397287424,
-        "v1_model_loss_forward_root_elements": 34623267,
-        "v2_projected_model_loss_forward_root_elements": 19527842,
-        "v2_tail_energy_model_loss_forward_root_elements": 19376348,
-        "v1_attention_forward_backward_root_elements": 29805312,
-        "v2_projected_attention_forward_backward_root_elements": 151296,
-        "v2_tail_attention_forward_backward_root_elements": 0
-      },
-      {
-        "shape": "L/16",
-        "depth": 24,
-        "width": 1024,
-        "heads": 16,
-        "mlp_dim": 4096,
-        "tokens": 256,
-        "grid": 16,
-        "batch": 1,
-        "shared_forward_block_matmul_flops": 161061273600,
-        "shared_forward_backward_block_matmul_flops": 483183820800,
-        "v1_model_loss_forward_root_elements": 50738414,
-        "v2_projected_model_loss_forward_root_elements": 25375981,
-        "v2_tail_energy_model_loss_forward_root_elements": 25179116,
-        "v1_attention_forward_backward_root_elements": 50331648,
-        "v2_projected_attention_forward_backward_root_elements": 196608,
-        "v2_tail_attention_forward_backward_root_elements": 0
+  "dominance_proven": false,
+  "dominance_scope": "Phase 1 acceptance is the explicit finite matrix plus exact-real component properties and stated source-program operation convention. Universal statistical/full-model dominance is not claimed.",
+  "reason": "The retained-E8 candidate passes the explicit Phase 1 comparisons, formal checks and operation convention.",
+  "phase_boundary": "Phase 1 only. No production third-arm registration, TPU kernels, multi-host smoke tests, sweeps or main runs.",
+  "cost_certificates": [
+    {
+      "shape": "B/16",
+      "tokens": 197,
+      "certificate": {
+        "floating_work_including_selections": {
+          "delta_at_batch_one": -104212882,
+          "delta_per_extra_example": -99701062,
+          "batch_three_delta": -303615006,
+          "affine_crosscheck": true,
+          "all_positive_batches_nonregressing": true
+        },
+        "rsqrt": {
+          "delta_at_batch_one": -14653639,
+          "delta_per_extra_example": -14524615,
+          "batch_three_delta": -43702869,
+          "affine_crosscheck": true,
+          "all_positive_batches_nonregressing": true
+        }
       }
-    ],
-    "formula_shared_forward_block_matmul_flops": "B*L*(24*N*D^2 + 4*N^2*D); linear QKVO + 4D MLP + QK/PV",
-    "formula_v1_forward_roots": "L*(2*B*N + B*N*M + G*D + B*H*N^2) + B*N + B*(K+6)",
-    "formula_v2_projected_forward_roots": "L*(2*B*N + B*N*M + 2*B*H*N) + B*(N+2) + B*(K+3)",
-    "formula_v2_tail_energy_forward_roots": "L*(2*B*N + B*N*M) + B + B*(K+3)",
-    "head_correction": "Frozen v1 roots the row normalizer six times, not each probability: K+6 scalar root elements per example; the v2 power head uses K+3.",
-    "assumptions": "K=1000, batch=1 samples; position tables shared across batch; recurrence counted as written (compiler may prune the unused final carry update); rgelu/ALU each have one forward root per activation; analytic AD reuses v2 lift roots; frozen v1 attention recomputes slope roots backward; no rematerialization, optimizer, embedding or classifier matmul costs included in block-only FLOPs.",
-    "total_step_flop_dominance": "unproven: elementwise arithmetic, reductions, divisions and optimizer work must also be counted; leading shared FLOPs cannot certify total-step dominance"
-  }
+    },
+    {
+      "shape": "B/16",
+      "tokens": 256,
+      "certificate": {
+        "floating_work_including_selections": {
+          "delta_at_batch_one": -134671297,
+          "delta_per_extra_example": -129561493,
+          "batch_three_delta": -393794283,
+          "affine_crosscheck": true,
+          "all_positive_batches_nonregressing": true
+        },
+        "rsqrt": {
+          "delta_at_batch_one": -19022082,
+          "delta_per_extra_example": -18874626,
+          "batch_three_delta": -56771334,
+          "affine_crosscheck": true,
+          "all_positive_batches_nonregressing": true
+        }
+      }
+    },
+    {
+      "shape": "L/16",
+      "tokens": 197,
+      "certificate": {
+        "floating_work_including_selections": {
+          "delta_at_batch_one": -275723486,
+          "delta_per_extra_example": -263649350,
+          "batch_three_delta": -803022186,
+          "affine_crosscheck": true,
+          "all_positive_batches_nonregressing": true
+        },
+        "rsqrt": {
+          "delta_at_batch_one": -39076039,
+          "delta_per_extra_example": -38731975,
+          "batch_three_delta": -116539989,
+          "affine_crosscheck": true,
+          "all_positive_batches_nonregressing": true
+        }
+      }
+    },
+    {
+      "shape": "L/16",
+      "tokens": 256,
+      "certificate": {
+        "floating_work_including_selections": {
+          "delta_at_batch_one": -356294637,
+          "delta_per_extra_example": -342612885,
+          "batch_three_delta": -1041520407,
+          "affine_crosscheck": true,
+          "all_positive_batches_nonregressing": true
+        },
+        "rsqrt": {
+          "delta_at_batch_one": -50725122,
+          "delta_per_extra_example": -50331906,
+          "batch_three_delta": -151388934,
+          "affine_crosscheck": true,
+          "all_positive_batches_nonregressing": true
+        }
+      }
+    }
+  ]
 }

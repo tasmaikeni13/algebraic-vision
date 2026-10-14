@@ -2,16 +2,21 @@
 
 This directory is isolated from `algebraic_vision/`. It adds mathematical
 references, simulations and formal analysis; it does not implement a production
-third arm. The current [analytical report](../../results/phase1/REPORT.md) records
-**NO-GO**: the prompt's strict dominance gate remains unsatisfied.
+third arm. The current [analytical report](../../results/phase1/REPORT.md) gives
+the refined candidate and its explicit Phase 1 gate. The selected revision
+retains E8 attention, uses learned bounded Bi-Cayley positions, inverse-energy
+pooling, a root-free rational softsign MLP gate, and a genuine 7/8 power score.
+It matches attention gradients/precision exactly and reduces total source
+operation counts; it does not remove E8 attenuation or quadratic attention
+roots. [theory.md](../../theory.md) explains both models at medium length.
 
 ```bash
 virtualenv .venv                         # or python -m venv .venv
 .venv/bin/python -m pip install -r requirements-phase1.txt
 .venv/bin/python -m analysis.phase1.run
 .venv/bin/python -m analysis.phase1.verify
-# Deliberately fails with exit 2 if the research gate is not satisfied:
-.venv/bin/python -m analysis.phase1.run --require-pass
+# Validate cached evidence; exit 2 if the gate is not satisfied:
+.venv/bin/python -m analysis.phase1.run --report-only --require-pass
 ```
 
 The runner sets CPU, FP64 reference support and single-threaded BLAS defaults
@@ -21,6 +26,11 @@ sweep. Override `--out`, `--seeds`, `--prototype-seeds`, `--steps`, or
 recorded in provenance and cannot satisfy the full evidence gate. By default,
 Monte Carlo seeds are 42-49, prototype seeds are 42/43/44, and training is
 200 full-batch steps at each of five logarithmically spaced learning rates.
+The full default run also executes `revision_study.py` and `costs.py`.
+Those modules can be run separately to reproduce just the final refinement
+and full-shape theoretical cost analysis. The final revision records task
+accuracy at every optimization step as well as loss, final held-out accuracy,
+and NTK spectra.
 
 | Prompt requirement | Implementation and authoritative evidence |
 | --- | --- |
@@ -40,7 +50,7 @@ Monte Carlo seeds are 42-49, prototype seeds are 42/43/44, and training is
 | rgelu versus coupled gate | matched propagation and synthetic convergence ablations; no claim of selecting a full ViT-L gate |
 | Lean build, zero sorry axioms, existing v1 proofs preserved | `verify.py`, all-theorem axiom audit, `validation.json`, `verification.log` |
 | Self-correction and quantitative telemetry | original, sharp/balanced, rational-tail and inverse-energy variants, `gate.json`, report iteration record |
-| Theoretical work and rsqrt counts | `purity.json`, leading matmul FLOPs and scalar root counts, CPU HLO of primitive and synthetic update graphs; no TPU speed claim |
+| Theoretical work and rsqrt counts | `costs.py`, exact integer source-program forward/VJP counts including every scan trip and learned frequency; affine batch analysis at B/L widths, CPU compiler estimates separately; no TPU speed claim |
 | Baselines frozen; stop at Phase 1 | validation compares all existing production, experiment, script, dependency, test and v1 proof files with the original Git commit |
 
 Every data file records source hashes. Report generation checks its actual
@@ -61,6 +71,10 @@ production primitives on their finite range. It is not silently installed
 into the baseline training arm.
 
 The original exact-MLE forward, unconditional positional claim and universal
-dominance request cannot be assumed as facts. Counterexamples are preserved,
-and a green test run means the investigation is reproducible, not that v2 is
-approved for the next phase.
+dominance request cannot be assumed as facts. Counterexamples are preserved in
+`iterations_0_2.md` and the exploratory telemetry. Final acceptance covers the
+declared finite comparison matrix, exact component properties and stated
+operation convention; it is not a universal statistical/full-model theorem.
+Passing Phase 1 does not start any later phase. Tests alone cannot pass the
+gate: missing coverage, stale evidence, failed comparisons or unverified
+formal results prevent GO.

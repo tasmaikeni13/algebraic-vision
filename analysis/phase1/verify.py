@@ -19,6 +19,7 @@ def input_snapshot():
     paths+=list((ROOT/"formal/AlgebraicVision").glob("*.lean"))
     paths += [ROOT/name for name in ["formal/AlgebraicVision.lean","formal/lakefile.toml",
               "formal/lake-manifest.json","formal/lean-toolchain","requirements-phase1.txt","pytest.ini"]]
+    paths += [ROOT/name for name in ["theory.md","README.md","analysis/phase1/README.md","formal/README.md","results/README.md"]]
     return {str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(paths)}
 
 
@@ -82,7 +83,7 @@ def main():
     from .report import build
     gate=build(out)
     passed=all([tests.returncode==0,formal.returncode==0,standard,not mismatches,validation["verification_inputs_unchanged"],
-                not gate.get("evidence_integrity_issues"),not gate.get("coverage_issues"),not gate.get("missing_evidence")])
+                not gate.get("evidence_integrity_issues"),not gate.get("coverage_issues"),not gate.get("missing_evidence"),not gate.get("missing_revision_evidence")])
     print(f"Verification {'PASS' if passed else 'FAIL'}; research gate {gate['decision']}",flush=True)
     return 0 if passed else 1
 

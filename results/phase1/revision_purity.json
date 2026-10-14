@@ -1,0 +1,89 @@
+{
+  "records": {
+    "selected_complete_step": {
+      "instruction_counts": {
+        "parameter": 513,
+        "add": 457,
+        "select": 48,
+        "sign": 2,
+        "broadcast": 319,
+        "compare": 58,
+        "remainder": 2,
+        "constant": 65,
+        "and": 2,
+        "divide": 108,
+        "subtract": 54,
+        "call": 19,
+        "maximum": 5,
+        "reshape": 398,
+        "iota": 9,
+        "convert": 39,
+        "tuple": 2,
+        "dot": 53,
+        "multiply": 439,
+        "concatenate": 16,
+        "gather": 32,
+        "reduce": 203,
+        "rsqrt": 11,
+        "slice": 32,
+        "minimum": 5,
+        "negate": 42,
+        "get-tuple-element": 6,
+        "transpose": 16,
+        "scatter": 32
+      },
+      "forbidden": {}
+    },
+    "rational_gate_value_and_gradient": {
+      "instruction_counts": {
+        "parameter": 6,
+        "select": 1,
+        "add": 2,
+        "constant": 6,
+        "broadcast": 5,
+        "multiply": 5,
+        "compare": 3,
+        "maximum": 1,
+        "minimum": 1,
+        "subtract": 3,
+        "call": 3,
+        "divide": 1,
+        "reduce": 1,
+        "tuple": 1
+      },
+      "forbidden": {}
+    }
+  },
+  "scope": "CPU HLO, two-layer synthetic objective/gradient/SGD update including all learned frequencies. No production registration, TPU kernel or multi-host smoke test.",
+  "provenance": {
+    "source_sha256": {
+      "analysis/phase1/revision_study.py": "d1fd189bc930905dec4eecfdedd14747b06085a4b0ed06e10e02edcac19f7e2c",
+      "analysis/phase1/revisions.py": "fb0924f4ae6e996af5e449d0f761c13530f78d1daa5a3a60817daa9a0c93da09",
+      "analysis/phase1/references.py": "9b99c732da9581f090fc203f346216f240879a69d6b6577c034f120d0e7c1b0e",
+      "analysis/phase1/convergence.py": "21efd844590caa3e32f0e41ac7feea0f3bf6485b98776b51a2a93f7dca9b1a4f",
+      "analysis/phase1/propagation.py": "7236ccfb477466092adb6fae434e7e5db505d19957360790b31a51b6f5429dc1",
+      "analysis/phase1/simulations.py": "ea50aa686cfea6cedc8a39ad892cbf4142eb736515e75ae1d84067e3628b8d95",
+      "analysis/phase1/purity.py": "ccecb04cd1464032244e130e60c98c7a0a8fd1544448d619d313f2a29e965f12",
+      "algebraic_vision/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "algebraic_vision/attention.py": "1d0812e44ae594519c035ec41409876e2cdff9d2a84118951706968f07f8db23",
+      "algebraic_vision/augment.py": "bcc908bccfcc9d6e405c647e83c89edc479482e0f664d2da334b9c9059197268",
+      "algebraic_vision/data.py": "2e14bc57bcb5c171061b5c47545b602913611eed9a843da7143c8f3a6537569b",
+      "algebraic_vision/kernels.py": "a9edd01fdcee8d3f1020ec64090e9a3b4a751c67af59917be3adce52dfffeac3",
+      "algebraic_vision/losses.py": "5c85b61d4be77bbbce538b66f23a03280e1b4eaba6b87f76d9cc385fcc5c6c95",
+      "algebraic_vision/model.py": "2c831a30b7f696874ae3385daf7b58d4d3e11f22fcc5705dc99f93c62f304f9c",
+      "algebraic_vision/primitives.py": "6da6a12a6fbad7892d5b6d87600c7498704d22e58df5ebd9aabfaebc323f057a",
+      "algebraic_vision/train.py": "95d4567936e0366ecac5efb4c9cc6c7d1db08005ef4b0499299d32e3c033f9f9"
+    },
+    "elapsed_seconds": 1.1788109400076792,
+    "jax": "0.6.2",
+    "python": "3.10.12",
+    "x64": true,
+    "backend": "cpu",
+    "seeds": [],
+    "dependencies": {
+      "numpy": "2.2.6",
+      "sympy": "1.14.0",
+      "mpmath": "1.3.0"
+    }
+  }
+}

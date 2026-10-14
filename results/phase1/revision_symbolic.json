@@ -1,0 +1,84 @@
+{
+  "checks": {
+    "positive_gate_derivative": true,
+    "negative_gate_derivative": true,
+    "gate_reflection": true,
+    "gate_value_matches_zero": true,
+    "gate_first_derivative_matches_zero": true,
+    "gate_second_derivative_matches_zero": true,
+    "pade_residual": true,
+    "pade_bound_polynomial_witness": true,
+    "selected_attention_is_baseline_expression": true
+  },
+  "mpmath_dps": 50,
+  "exploratory_pade_oracle": [
+    {
+      "score": "0.0",
+      "pade0_relative_radius_error": "0.0",
+      "pade1_relative_radius_error": "0.0"
+    },
+    {
+      "score": "0.000000000001",
+      "pade0_relative_radius_error": "0.0",
+      "pade1_relative_radius_error": "2.672764710092195646140536467151481878815196880105e-51"
+    },
+    {
+      "score": "1.0",
+      "pade0_relative_radius_error": "-0.0000012869376104013052393041997449226938208524863587877",
+      "pade1_relative_radius_error": "0.00000000000082810527225253108902580844218253625746093213690738"
+    },
+    {
+      "score": "94.0",
+      "pade0_relative_radius_error": "-0.00010020006728681230643775087682136424120253485197844",
+      "pade1_relative_radius_error": "0.0000000050205297995645886807058054909954091548057710986597"
+    },
+    {
+      "score": "10000.0",
+      "pade0_relative_radius_error": "-0.00000000012748896148759797353207581680521535277136436397133",
+      "pade1_relative_radius_error": "8.1267176516291864438948739494248169619885388536067e-21"
+    }
+  ],
+  "selected_equations": {
+    "attention": "exact frozen E8 attention; no ball lift, no column balancing",
+    "position_frequency": "(1/G)*(1/4+3/(4*(1+raw^2))) in (1/(4G),1/G] for finite raw",
+    "positions": "two planes, phases c*theta_x+r*theta_y and c*theta_x-r*theta_y",
+    "pool": "sum a_i*h_i / sum a_i, a_i=d/(d+||h_i||^2), then final LayerNorm",
+    "head": "strictly proper power score a=7/8, E8(z/4) link; ordinary exact AD",
+    "gate": "g(x)=x/2*(1+c*x/(1+c*|x|)), c=0.851"
+  },
+  "position_proof": "0<theta_x,theta_y<=2/G. Every grid-offset phase has absolute value <4<2*pi. Both planes being identity therefore forces both phases to zero, whence dc=dr=0. This holds for all finite raw parameters, not only sampled initializations.",
+  "gate_proof": "Both one-sided value/first/second derivatives agree at zero: 0,1/2,c. For x>=0, g'=1-1/(2*(1+c*x)^2); for x<0, g'=1/(2*(1-c*x)^2). Thus 0<g'<1 for finite x and c>0. Negative tail tends to -1/(2c).",
+  "attention_limit": "The gate matches v1 attention exactly; g8(94) is still about 0.085. There is no assertion of eliminating this attenuation.",
+  "equivalence_policy": "User authorized a derived numerical equivalence tolerance. The selected retained-E8 attention needs no such allowance: it uses the identical expression and precision policy.",
+  "provenance": {
+    "source_sha256": {
+      "analysis/phase1/revision_study.py": "d1fd189bc930905dec4eecfdedd14747b06085a4b0ed06e10e02edcac19f7e2c",
+      "analysis/phase1/revisions.py": "fb0924f4ae6e996af5e449d0f761c13530f78d1daa5a3a60817daa9a0c93da09",
+      "analysis/phase1/references.py": "9b99c732da9581f090fc203f346216f240879a69d6b6577c034f120d0e7c1b0e",
+      "analysis/phase1/convergence.py": "21efd844590caa3e32f0e41ac7feea0f3bf6485b98776b51a2a93f7dca9b1a4f",
+      "analysis/phase1/propagation.py": "7236ccfb477466092adb6fae434e7e5db505d19957360790b31a51b6f5429dc1",
+      "analysis/phase1/simulations.py": "ea50aa686cfea6cedc8a39ad892cbf4142eb736515e75ae1d84067e3628b8d95",
+      "analysis/phase1/purity.py": "ccecb04cd1464032244e130e60c98c7a0a8fd1544448d619d313f2a29e965f12",
+      "algebraic_vision/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "algebraic_vision/attention.py": "1d0812e44ae594519c035ec41409876e2cdff9d2a84118951706968f07f8db23",
+      "algebraic_vision/augment.py": "bcc908bccfcc9d6e405c647e83c89edc479482e0f664d2da334b9c9059197268",
+      "algebraic_vision/data.py": "2e14bc57bcb5c171061b5c47545b602913611eed9a843da7143c8f3a6537569b",
+      "algebraic_vision/kernels.py": "a9edd01fdcee8d3f1020ec64090e9a3b4a751c67af59917be3adce52dfffeac3",
+      "algebraic_vision/losses.py": "5c85b61d4be77bbbce538b66f23a03280e1b4eaba6b87f76d9cc385fcc5c6c95",
+      "algebraic_vision/model.py": "2c831a30b7f696874ae3385daf7b58d4d3e11f22fcc5705dc99f93c62f304f9c",
+      "algebraic_vision/primitives.py": "6da6a12a6fbad7892d5b6d87600c7498704d22e58df5ebd9aabfaebc323f057a",
+      "algebraic_vision/train.py": "95d4567936e0366ecac5efb4c9cc6c7d1db08005ef4b0499299d32e3c033f9f9"
+    },
+    "elapsed_seconds": 0.14629784796852618,
+    "jax": "0.6.2",
+    "python": "3.10.12",
+    "x64": true,
+    "backend": "cpu",
+    "seeds": [],
+    "dependencies": {
+      "numpy": "2.2.6",
+      "sympy": "1.14.0",
+      "mpmath": "1.3.0"
+    }
+  }
+}

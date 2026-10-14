@@ -1,0 +1,23 @@
+{
+  "scope": "Exploratory selection telemetry, archived exact scripts and outputs; not final gate evidence. Original scripts use ordinary AD and write /tmp outputs.",
+  "records": {
+    "projected": {
+      "source": "analysis/phase1/exploration/projected.py",
+      "source_sha256": "fdce685947643f57eb936d4cb27818336293e10f01f9055bddb1334cc9933d2b",
+      "output_sha256": "cb9991e4592341403182c9d0a4bf03f8b418438571c4cfac3b67d2bfcba6e5e1",
+      "candidates": 75
+    },
+    "column_energy": {
+      "source": "analysis/phase1/exploration/column_energy.py",
+      "source_sha256": "6a7ca9ef785e357d0b6b4c786e44a6fd506a564cf0882693ccecaed451c070f7",
+      "output_sha256": "c4cb846433b9f958c049a9f4f05e7c42c3cecc2558b02c408de2ce9cc599b20d",
+      "candidates": 225
+    },
+    "rational": {
+      "source": "analysis/phase1/exploration/rational.py",
+      "source_sha256": "7e277d74963d317489b1144ccf28195f2874ebb7faa8cbbd94b5d3bca7085ddf",
+      "output_sha256": "c76955163ec94c5d910149284bf4fa405b4a2418c1df63583a6980eb1c6e01cd",
+      "candidates": 96
+    }
+  }
+}
