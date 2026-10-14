@@ -1,0 +1,649 @@
+{
+  "decision": "NO-GO",
+  "dominance_proven": false,
+  "candidates": {
+    "v2_proposed": {
+      "random_high_scale_gradient_min_paired_ratio": 0.08849165370450814,
+      "random_high_scale_gradient_mean_paired_ratio": 0.09957146499836607,
+      "radial_gradient_min_ratio": 0.18121201493220615,
+      "precision_cells": [
+        {
+          "dtype": "float32",
+          "scale": 1,
+          "metric": "tv_max",
+          "ratio_of_means": 0.6744421408210973
+        },
+        {
+          "dtype": "float32",
+          "scale": 1,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.8437273261960537
+        },
+        {
+          "dtype": "float32",
+          "scale": 3,
+          "metric": "tv_max",
+          "ratio_of_means": 0.4276832328621645
+        },
+        {
+          "dtype": "float32",
+          "scale": 3,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.6805697634829607
+        },
+        {
+          "dtype": "float32",
+          "scale": 10,
+          "metric": "tv_max",
+          "ratio_of_means": 0.37624015021653223
+        },
+        {
+          "dtype": "float32",
+          "scale": 10,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.5549811060871198
+        },
+        {
+          "dtype": "float32",
+          "scale": 30,
+          "metric": "tv_max",
+          "ratio_of_means": 0.3633948154337809
+        },
+        {
+          "dtype": "float32",
+          "scale": 30,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.5401185154236016
+        },
+        {
+          "dtype": "float32",
+          "scale": 100,
+          "metric": "tv_max",
+          "ratio_of_means": 0.3711642032838355
+        },
+        {
+          "dtype": "float32",
+          "scale": 100,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.578146067459038
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 1,
+          "metric": "tv_max",
+          "ratio_of_means": 0.42872002738110737
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 1,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.8413996805383959
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 3,
+          "metric": "tv_max",
+          "ratio_of_means": 0.17114891197116688
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 3,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.4026910425544649
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 10,
+          "metric": "tv_max",
+          "ratio_of_means": 0.16109600024054893
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 10,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.3518568509596488
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 30,
+          "metric": "tv_max",
+          "ratio_of_means": 0.1438332968705851
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 30,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.3400788023663574
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 100,
+          "metric": "tv_max",
+          "ratio_of_means": 0.15733700579751742
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 100,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.3679892689823226
+        }
+      ],
+      "worst_precision_ratio": 0.8437273261960537,
+      "worst_pool_corruption_ratio": 1.4420155367894807,
+      "gradient_pass": false,
+      "precision_pass": true,
+      "pool_pass": false,
+      "criterion_note": "No tolerance chosen after seeing the data; exact sample non-regression is not a population dominance proof.",
+      "position_pass": true,
+      "research_arithmetic_purity_pass": true,
+      "theoretical_attention_rsqrt_reduction": true,
+      "total_training_step_flop_dominance_proven": false,
+      "all_empirical_nonregression_checks_pass": false
+    },
+    "v2_sharp": {
+      "random_high_scale_gradient_min_paired_ratio": 0.3310693102020477,
+      "random_high_scale_gradient_mean_paired_ratio": 0.3654008896643345,
+      "radial_gradient_min_ratio": 0.011422553279320374,
+      "precision_cells": [
+        {
+          "dtype": "float32",
+          "scale": 1,
+          "metric": "tv_max",
+          "ratio_of_means": 1.0736634011293797
+        },
+        {
+          "dtype": "float32",
+          "scale": 1,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.9806827009701349
+        },
+        {
+          "dtype": "float32",
+          "scale": 3,
+          "metric": "tv_max",
+          "ratio_of_means": 0.6860857275011139
+        },
+        {
+          "dtype": "float32",
+          "scale": 3,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.7598296736955013
+        },
+        {
+          "dtype": "float32",
+          "scale": 10,
+          "metric": "tv_max",
+          "ratio_of_means": 0.5340285881438109
+        },
+        {
+          "dtype": "float32",
+          "scale": 10,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.5625660334008493
+        },
+        {
+          "dtype": "float32",
+          "scale": 30,
+          "metric": "tv_max",
+          "ratio_of_means": 0.535445733692709
+        },
+        {
+          "dtype": "float32",
+          "scale": 30,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.5982861943575665
+        },
+        {
+          "dtype": "float32",
+          "scale": 100,
+          "metric": "tv_max",
+          "ratio_of_means": 0.6372824159966618
+        },
+        {
+          "dtype": "float32",
+          "scale": 100,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.6705898767778222
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 1,
+          "metric": "tv_max",
+          "ratio_of_means": 1.4386413918571022
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 1,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 1.1226924571834402
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 3,
+          "metric": "tv_max",
+          "ratio_of_means": 0.4027407819915318
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 3,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.5124428646047782
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 10,
+          "metric": "tv_max",
+          "ratio_of_means": 0.3328688098461761
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 10,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.4386579446057986
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 30,
+          "metric": "tv_max",
+          "ratio_of_means": 0.2933626789608396
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 30,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.4275819862574027
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 100,
+          "metric": "tv_max",
+          "ratio_of_means": 0.33286280684901504
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 100,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.4533402625251452
+        }
+      ],
+      "worst_precision_ratio": 1.4386413918571022,
+      "worst_pool_corruption_ratio": 1.4420155367894807,
+      "gradient_pass": false,
+      "precision_pass": false,
+      "pool_pass": false,
+      "criterion_note": "No tolerance chosen after seeing the data; exact sample non-regression is not a population dominance proof.",
+      "position_pass": true,
+      "research_arithmetic_purity_pass": true,
+      "theoretical_attention_rsqrt_reduction": true,
+      "total_training_step_flop_dominance_proven": false,
+      "all_empirical_nonregression_checks_pass": false
+    },
+    "v2_balanced": {
+      "random_high_scale_gradient_min_paired_ratio": 0.3030815996487203,
+      "random_high_scale_gradient_mean_paired_ratio": 0.33418189669508724,
+      "radial_gradient_min_ratio": null,
+      "precision_cells": [
+        {
+          "dtype": "float32",
+          "scale": 1,
+          "metric": "tv_max",
+          "ratio_of_means": 0.9781692644642738
+        },
+        {
+          "dtype": "float32",
+          "scale": 1,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.9227911093758284
+        },
+        {
+          "dtype": "float32",
+          "scale": 3,
+          "metric": "tv_max",
+          "ratio_of_means": 0.5751231518625017
+        },
+        {
+          "dtype": "float32",
+          "scale": 3,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.6905869845667499
+        },
+        {
+          "dtype": "float32",
+          "scale": 10,
+          "metric": "tv_max",
+          "ratio_of_means": 0.4578057738390875
+        },
+        {
+          "dtype": "float32",
+          "scale": 10,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.5405031550358922
+        },
+        {
+          "dtype": "float32",
+          "scale": 30,
+          "metric": "tv_max",
+          "ratio_of_means": 0.46698805507104313
+        },
+        {
+          "dtype": "float32",
+          "scale": 30,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.5425667640479654
+        },
+        {
+          "dtype": "float32",
+          "scale": 100,
+          "metric": "tv_max",
+          "ratio_of_means": 0.5539465660564498
+        },
+        {
+          "dtype": "float32",
+          "scale": 100,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.6221722901370679
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 1,
+          "metric": "tv_max",
+          "ratio_of_means": 1.3247507801593912
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 1,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 1.0721801187462936
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 3,
+          "metric": "tv_max",
+          "ratio_of_means": 0.3744342609557965
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 3,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.5038477856173089
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 10,
+          "metric": "tv_max",
+          "ratio_of_means": 0.31694829379287626
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 10,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.42911327346069383
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 30,
+          "metric": "tv_max",
+          "ratio_of_means": 0.27109444130772936
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 30,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.4172743775589492
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 100,
+          "metric": "tv_max",
+          "ratio_of_means": 0.30574789276893033
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 100,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.4450117234368042
+        }
+      ],
+      "worst_precision_ratio": 1.3247507801593912,
+      "worst_pool_corruption_ratio": 1.4420155367894807,
+      "gradient_pass": false,
+      "precision_pass": false,
+      "pool_pass": false,
+      "criterion_note": "No tolerance chosen after seeing the data; exact sample non-regression is not a population dominance proof.",
+      "position_pass": true,
+      "research_arithmetic_purity_pass": true,
+      "theoretical_attention_rsqrt_reduction": true,
+      "total_training_step_flop_dominance_proven": false,
+      "all_empirical_nonregression_checks_pass": false
+    },
+    "v2_rational_tail": {
+      "random_high_scale_gradient_min_paired_ratio": 1.000138056941698,
+      "random_high_scale_gradient_mean_paired_ratio": 1.0048200493387225,
+      "radial_gradient_min_ratio": 0.7149548472662943,
+      "precision_cells": [
+        {
+          "dtype": "float32",
+          "scale": 1,
+          "metric": "tv_max",
+          "ratio_of_means": 0.8616926464358885
+        },
+        {
+          "dtype": "float32",
+          "scale": 1,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.8347936645158672
+        },
+        {
+          "dtype": "float32",
+          "scale": 3,
+          "metric": "tv_max",
+          "ratio_of_means": 0.9290535761942781
+        },
+        {
+          "dtype": "float32",
+          "scale": 3,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.9661621658257004
+        },
+        {
+          "dtype": "float32",
+          "scale": 10,
+          "metric": "tv_max",
+          "ratio_of_means": 0.9145758974771179
+        },
+        {
+          "dtype": "float32",
+          "scale": 10,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.9143562012434289
+        },
+        {
+          "dtype": "float32",
+          "scale": 30,
+          "metric": "tv_max",
+          "ratio_of_means": 0.9587359452402822
+        },
+        {
+          "dtype": "float32",
+          "scale": 30,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 1.0343779778834716
+        },
+        {
+          "dtype": "float32",
+          "scale": 100,
+          "metric": "tv_max",
+          "ratio_of_means": 1.0917733064364614
+        },
+        {
+          "dtype": "float32",
+          "scale": 100,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 1.0096837337755429
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 1,
+          "metric": "tv_max",
+          "ratio_of_means": 0.9774298269294553
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 1,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.9984840313336896
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 3,
+          "metric": "tv_max",
+          "ratio_of_means": 0.9729688436958589
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 3,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.960944396192406
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 10,
+          "metric": "tv_max",
+          "ratio_of_means": 1.0109144554860983
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 10,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 1.0181384902562072
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 30,
+          "metric": "tv_max",
+          "ratio_of_means": 1.0025690970805996
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 30,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 0.9997973444760787
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 100,
+          "metric": "tv_max",
+          "ratio_of_means": 1.0002717318403842
+        },
+        {
+          "dtype": "bfloat16",
+          "scale": 100,
+          "metric": "backward_relative_error",
+          "ratio_of_means": 1.0013632306736562
+        }
+      ],
+      "worst_precision_ratio": 1.0917733064364614,
+      "worst_pool_corruption_ratio": 0.7249124537972306,
+      "gradient_pass": false,
+      "precision_pass": false,
+      "pool_pass": true,
+      "criterion_note": "No tolerance chosen after seeing the data; exact sample non-regression is not a population dominance proof.",
+      "position_pass": true,
+      "research_arithmetic_purity_pass": true,
+      "theoretical_attention_rsqrt_reduction": true,
+      "total_training_step_flop_dominance_proven": false,
+      "all_empirical_nonregression_checks_pass": false
+    }
+  },
+  "evidence_integrity_issues": [],
+  "formal_verified": true,
+  "tests_verified": true,
+  "coverage_issues": [],
+  "validation_current": true,
+  "reason": "No tested candidate satisfies every non-regression comparison; exact CE forward also violates algebraic purity. No population/full-model dominance theorem is established.",
+  "phase_boundary": "Phase 1 research only. Phases 2-5 were not implemented or launched.",
+  "strict_gate_satisfied": false,
+  "theoretical_work": {
+    "rows": [
+      {
+        "shape": "B/16",
+        "depth": 12,
+        "width": 768,
+        "heads": 12,
+        "mlp_dim": 3072,
+        "tokens": 197,
+        "grid": 14,
+        "batch": 1,
+        "shared_forward_block_matmul_flops": 34894909440,
+        "shared_forward_backward_block_matmul_flops": 104684728320,
+        "v1_model_loss_forward_root_elements": 12985659,
+        "v2_projected_model_loss_forward_root_elements": 7324874,
+        "v2_tail_energy_model_loss_forward_root_elements": 7267940,
+        "v1_attention_forward_backward_root_elements": 11176992,
+        "v2_projected_attention_forward_backward_root_elements": 56736,
+        "v2_tail_attention_forward_backward_root_elements": 0
+      },
+      {
+        "shape": "B/16",
+        "depth": 12,
+        "width": 768,
+        "heads": 12,
+        "mlp_dim": 3072,
+        "tokens": 256,
+        "grid": 16,
+        "batch": 1,
+        "shared_forward_block_matmul_flops": 45902462976,
+        "shared_forward_backward_block_matmul_flops": 137707388928,
+        "v1_model_loss_forward_root_elements": 19029230,
+        "v2_projected_model_loss_forward_root_elements": 9518317,
+        "v2_tail_energy_model_loss_forward_root_elements": 9444332,
+        "v1_attention_forward_backward_root_elements": 18874368,
+        "v2_projected_attention_forward_backward_root_elements": 73728,
+        "v2_tail_attention_forward_backward_root_elements": 0
+      },
+      {
+        "shape": "L/16",
+        "depth": 24,
+        "width": 1024,
+        "heads": 16,
+        "mlp_dim": 4096,
+        "tokens": 197,
+        "grid": 14,
+        "batch": 1,
+        "shared_forward_block_matmul_flops": 122799095808,
+        "shared_forward_backward_block_matmul_flops": 368397287424,
+        "v1_model_loss_forward_root_elements": 34623267,
+        "v2_projected_model_loss_forward_root_elements": 19527842,
+        "v2_tail_energy_model_loss_forward_root_elements": 19376348,
+        "v1_attention_forward_backward_root_elements": 29805312,
+        "v2_projected_attention_forward_backward_root_elements": 151296,
+        "v2_tail_attention_forward_backward_root_elements": 0
+      },
+      {
+        "shape": "L/16",
+        "depth": 24,
+        "width": 1024,
+        "heads": 16,
+        "mlp_dim": 4096,
+        "tokens": 256,
+        "grid": 16,
+        "batch": 1,
+        "shared_forward_block_matmul_flops": 161061273600,
+        "shared_forward_backward_block_matmul_flops": 483183820800,
+        "v1_model_loss_forward_root_elements": 50738414,
+        "v2_projected_model_loss_forward_root_elements": 25375981,
+        "v2_tail_energy_model_loss_forward_root_elements": 25179116,
+        "v1_attention_forward_backward_root_elements": 50331648,
+        "v2_projected_attention_forward_backward_root_elements": 196608,
+        "v2_tail_attention_forward_backward_root_elements": 0
+      }
+    ],
+    "formula_shared_forward_block_matmul_flops": "B*L*(24*N*D^2 + 4*N^2*D); linear QKVO + 4D MLP + QK/PV",
+    "formula_v1_forward_roots": "L*(2*B*N + B*N*M + G*D + B*H*N^2) + B*N + B*(K+6)",
+    "formula_v2_projected_forward_roots": "L*(2*B*N + B*N*M + 2*B*H*N) + B*(N+2) + B*(K+3)",
+    "formula_v2_tail_energy_forward_roots": "L*(2*B*N + B*N*M) + B + B*(K+3)",
+    "head_correction": "Frozen v1 roots the row normalizer six times, not each probability: K+6 scalar root elements per example; the v2 power head uses K+3.",
+    "assumptions": "K=1000, batch=1 samples; position tables shared across batch; recurrence counted as written (compiler may prune the unused final carry update); rgelu/ALU each have one forward root per activation; analytic AD reuses v2 lift roots; frozen v1 attention recomputes slope roots backward; no rematerialization, optimizer, embedding or classifier matmul costs included in block-only FLOPs.",
+    "total_step_flop_dominance": "unproven: elementwise arithmetic, reductions, divisions and optimizer work must also be counted; leading shared FLOPs cannot certify total-step dominance"
+  }
+}

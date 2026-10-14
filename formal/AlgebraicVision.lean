@@ -3,3 +3,8 @@ import AlgebraicVision.Attention
 import AlgebraicVision.Activation
 import AlgebraicVision.Cayley2D
 import AlgebraicVision.PowerScore
+import AlgebraicVision.V2Kernel
+import AlgebraicVision.V2Positions
+import AlgebraicVision.V2Floor
+import AlgebraicVision.V2Centroid
+import AlgebraicVision.V2Corrections

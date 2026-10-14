@@ -36,3 +36,23 @@ Derivative formulas (the log-derivative of `E_n`, the attention Jacobian, the
 gradient through the radical link) and asymptotic statements are checked
 symbolically and at 50 digits by `analysis/symbolic_checks.py` instead.
 Neither establishes model accuracy or speed.
+
+## Phase 1 v2 extensions
+
+The original modules above are unchanged. The following additional modules
+are imported by the same `lake build` target:
+
+| Module | Exact-real statements |
+| --- | --- |
+| `V2Kernel` | Weierstrass–Cayley equivalence on `abs u < kappa`, positivity, explicit lower/upper kernel bounds |
+| `V2Floor` | Normalized attention floor for a nonempty finite key set and `abs u <= 1 < kappa` |
+| `V2Positions` | Nonzero homogeneous recurrence, projective orthogonality and determinant one, equality to Cayley powers, determinant-one paired SO(4) generators and relative-offset invariance, rank determinant for positive Cayley frequencies |
+| `V2Centroid` | Lift norm identity and the vector centroid bound `N^2 - norm(M)^2 >= N^2*d/(d+R)>0` when `norm(h_i)^2 <= R`, `d>0`, and `N>0` |
+| `V2Corrections` | Positivity and reciprocal symmetry of the rational-tail candidate, positive inverse-energy weights/denominator, weighted-centroid fixed points |
+
+`centroid_denominator_max` explicitly specializes the bound to
+`R = max_i norm(h_i)^2` and proves the lower bound is strictly positive. Proofs do not assert
+floating-point exactness, arbitrary-frequency injectivity, or optimization
+dominance. `analysis.phase1.verify` builds this target and generates an axiom
+audit for every locally declared theorem and lemma, preserving the original
+proofs in that audit. Only standard Lean axioms are accepted.
