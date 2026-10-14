@@ -1,0 +1,256 @@
+{
+  "passed": true,
+  "count": 50,
+  "checks": [
+    {
+      "check": "A1 rho positive (sqrt(1+v^2)^2 - v^2 = 1)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "A2 rho(s) rho(-s) = 1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "A3 d/ds log E_n = (1+s^2/n^2)^(-1/2)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "A4 E_n(s) = 1 + s + s^2/2 + (1-1/n^2) s^3/6 + O(s^4)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "A5 |log E_n(s) - s| <= |s|^3/(6n^2) on s in [-40,40]",
+      "passed": true,
+      "detail": "max(gap-bound)=0.0"
+    },
+    {
+      "check": "A6 key identity y^2(n^2+x^2) - x^2(n^2+y^2) = n^2 (y^2 - x^2)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "A6 E_n(x)/E_n(y) <= (x/y)^n for x>=y>0 (20k samples, 50 digits)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "A7 lim_c rho(3c)/rho(2c) = 3/2 (radical ratio converges)",
+      "passed": true,
+      "detail": "limit=3/2"
+    },
+    {
+      "check": "A7 lim_c exp(3c)/exp(2c) = oo (softmax ratio diverges)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "A8 dp_i/ds_j = g(s_j) p_i (delta_ij - p_j) with sink (N=3, exact point)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "A9 sum p = 1 - Omega/D",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "A10 1/4 - p(1-p) = (p-1/2)^2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "A10 1/4 - p q >= 0 when p+q<=1: (p+q)^2 - 4pq = (p-q)^2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "A11 overflow-free score range |s| < s_max(n) (fp32/bf16)",
+      "passed": true,
+      "detail": "{4: '8.582e+09', 8: '2.62e+05', 16: '2047', 32: '255'}"
+    },
+    {
+      "check": "A11 softmax without max-shift overflows at s > 88.72",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "A12 lim_n E_n(s) = e^s",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "A13 tiles add without rescaling",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "B1 F'(y) = (1+y^2)^(-3/2)/2 > 0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "B1 F(y) + F(-y) = 1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "B1 F(-inf)=0, F(inf)=1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "B2 ALU_c'(x) = (1+u)/2 + u(1-u^2)/2, u = cx/sqrt(1+c^2x^2)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "B3 ALU_c' range = [1/2 - 2 sqrt6/9, 1/2 + 2 sqrt6/9] (any c>0)",
+      "passed": true,
+      "detail": "[-0.044331, 1.044331]"
+    },
+    {
+      "check": "B3 GELU' range = [-0.128904, 1.128904] (attained at +-sqrt2)",
+      "passed": true,
+      "detail": "[-0.12890415, 1.1289041]"
+    },
+    {
+      "check": "B3 Lipschitz: ALU 1.044331 < GELU 1.128904",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "B4 ALU_c''(0) = c",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "B4 GELU''(0) = sqrt(2/pi)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "B5 h(u) = -(u+1)(u^2-u-1)/2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "B5 ALU_c minimum at x = -golden^(-1/2)/c with value -golden^(-5/2)/(2c)",
+      "passed": true,
+      "detail": "min*c = -0.150142"
+    },
+    {
+      "check": "B5 GELU minimum -0.169971 at x = -0.751791",
+      "passed": true,
+      "detail": "x=-0.75179152 value=-0.16997121"
+    },
+    {
+      "check": "B5 inflections of ALU_c at x^2 = 2/c^2 (h'(u)=0 <=> u^2=2/3)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "B6 tails: ALU_c(x) ~ 1/(4c^2 x) as x->-inf, x - 1/(4c^2 x) as x->+inf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "B7 sigma_n(y) + sigma_n(-y) = 1 (using A2: E(-y) = 1/E(y))",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "B7 sigma_8 matches the logistic to second order",
+      "passed": true,
+      "detail": "diff = -y**3/1536"
+    },
+    {
+      "check": "B7 sigma_n' = sigma_n (1 - sigma_n) / sqrt(1 + y^2/n^2)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "B7 0 < sigma_n' <= 1/4 (p(1-p) <= 1/4 and g <= 1)",
+      "passed": true,
+      "detail": "from A10 and A3"
+    },
+    {
+      "check": "B7 tail sigma_8(-y) ~ (n/(2y))^n",
+      "passed": true,
+      "detail": "max rel dev 0.00319 at y in (200, 1000, 5000)"
+    },
+    {
+      "check": "B8 rgelu derivative range ~ [-0.0945, 1.0945] (n=8, beta=1.702)",
+      "passed": true,
+      "detail": "[-0.0945645, 1.09456]"
+    },
+    {
+      "check": "C1 R(w)^T R(w) = I",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "C1 det R(w) = 1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "C2 R(w) rotates by theta = 2 atan(w)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "C3 R^a^T R^b = R^(b-a) for a,b in [-2,2]",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "C4 2-D axial Cayley: <B(1,2)q, B(3,1)k> = <q, B(2,-1)k>",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "D1 one-hot power score = sum p^a/a - p_c^(a-1)/(a-1) + 1/(a(a-1))",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "D2 alpha=7/8: 8 p_c^(-1/8) + (8/7) sum p^(7/8) - 64/7",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "D3 alpha=2 gives Brier/2 (on the simplex)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "D4 alpha->1 gives the log score -log p_c",
+      "passed": true,
+      "detail": "1.60943791243"
+    },
+    {
+      "check": "D5 strict propriety: E_q[S(p,y)] >= E_q[S(q,y)] (2000 random p, alpha=7/8)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "D5 strict propriety: E_q[S(p,y)] >= E_q[S(q,y)] (2000 random p, alpha=63/64)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "D5 generator convex: phi''(t) = t^(alpha-2) > 0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "D6 dL/dz_j = g(z_j) p_j (dL/dp_j - <p, dL/dp>) via the radical link",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

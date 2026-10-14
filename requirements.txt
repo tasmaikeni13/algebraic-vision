@@ -1,0 +1,12 @@
+# Shared dependencies for CPU checks, data preparation, analysis and training.
+jax==0.6.2
+jaxlib==0.6.2
+optax==0.2.8
+numpy==2.2.6
+scipy==1.15.3
+pyarrow==25.0.1
+pillow==12.3.0
+sympy==1.14.0
+mpmath==1.3.0
+matplotlib==3.10.9
+pytest==9.1.1
