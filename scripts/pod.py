@@ -10,6 +10,7 @@ import os
 import shlex
 import subprocess
 import time
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 from algebraic_vision.production import ProductionConfig, atomic_json, config_hash
@@ -18,8 +19,34 @@ from analysis.production_fairness import check_matrix
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def device_users(host):
+    command=["fuser","/tmp/libtpu_lockfile",*[f"/dev/accel{i}" for i in range(4)]]
+    argv=command if host=="localhost" else ["ssh","-o","BatchMode=yes","-o","ConnectTimeout=10",host,shlex.join(command)]
+    result=subprocess.run(argv,capture_output=True,text=True)
+    if result.returncode not in (0,1):
+        raise RuntimeError(f"cannot check TPU occupancy on {host}: {result.stderr.strip()}")
+    return sorted(set(result.stdout.split()))
+
+
+def wait_for_idle(workers):
+    hosts=["localhost",*workers]
+    previous=None
+    while True:
+        with ThreadPoolExecutor(max_workers=4) as pool:
+            occupants=dict(zip(hosts,pool.map(device_users,hosts)))
+        busy={host:pids for host,pids in occupants.items() if pids}
+        if not busy:
+            return
+        if busy!=previous:
+            print(f"Waiting for occupied TPU devices: {busy}",flush=True)
+            previous=busy
+        time.sleep(15)
+
+
 def sync(workers):
     for worker in workers:
+        subprocess.run(["ssh", "-o", "BatchMode=yes", worker,
+                         "mkdir -p ~/algebraic-vision/results/configs"], check=True)
         subprocess.run(["rsync", "-a", "--exclude=.venv", "--exclude=.git", "--exclude=formal/.lake",
                          "--exclude=__pycache__", "--exclude=results/", str(ROOT) + "/",
                          f"{worker}:algebraic-vision/"], check=True)
@@ -28,6 +55,7 @@ def sync(workers):
 
 
 def run_command(command, name, workers, collect=(), timeout=3600):
+    wait_for_idle(workers)
     logs = ROOT / "results/logs"
     logs.mkdir(parents=True, exist_ok=True)
     revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
