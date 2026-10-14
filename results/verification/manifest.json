@@ -139,7 +139,8 @@
     "tests/test_flash.py": "bbc7437b122562db4590e05704cd30b5e728eb0db88d7f80fd0bbfec15b2ef7f",
     "tests/test_production_pipeline.py": "8afa4e67589c51583e828a27112b4217622844e7f03567d3ab63cc7806e109fe",
     "tests/test_rational_kernel.py": "8ece1bf297f68311f35132913af7b03459a7e4a7550a9f6dafb34b01a62634f8",
-    "tests/test_v2_production.py": "368d89ca93c728742fd55a01c279b3fc59a8701fc339827752583402e18e6140"
+    "tests/test_v2_production.py": "368d89ca93c728742fd55a01c279b3fc59a8701fc339827752583402e18e6140",
+    "results/README.md": "710063750c229ed7c7f294faeb47e9137b0b2b9b4421900a6b3edc7b37403eee"
   },
   "scope": "Current production sources, configs, CPU/formal verification, executed TPU smoke/bench evidence, reports and figures"
 }
