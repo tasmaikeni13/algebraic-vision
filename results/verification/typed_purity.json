@@ -1,0 +1,270 @@
+{
+  "records": [
+    {
+      "pure": true,
+      "unexpected_float_operations": [],
+      "floating_primitives": {
+        "pjit": 156,
+        "shard_map": 1,
+        "reshape": 297,
+        "transpose": 195,
+        "convert_element_type": 502,
+        "dot_general": 233,
+        "broadcast_in_dim": 779,
+        "add": 1297,
+        "reduce_sum": 872,
+        "div": 741,
+        "sub": 354,
+        "mul": 4225,
+        "rsqrt": 287,
+        "slice": 659,
+        "squeeze": 562,
+        "integer_pow": 48,
+        "scan": 48,
+        "gather": 96,
+        "concatenate": 24,
+        "custom_vjp_call": 13,
+        "pad": 87,
+        "pallas_call": 26,
+        "get": 113,
+        "min": 39,
+        "select_n": 5,
+        "swap": 62,
+        "neg": 181,
+        "custom_jvp_call": 12,
+        "reduce_max": 2,
+        "add_any": 783,
+        "split": 24,
+        "scatter-add": 96,
+        "psum": 2,
+        "max": 176
+      },
+      "integer_index_operations": [],
+      "arm": "algebraic",
+      "scale": "vit-b16"
+    },
+    {
+      "pure": true,
+      "unexpected_float_operations": [],
+      "floating_primitives": {
+        "pjit": 180,
+        "shard_map": 1,
+        "reshape": 443,
+        "transpose": 243,
+        "convert_element_type": 502,
+        "dot_general": 233,
+        "broadcast_in_dim": 1622,
+        "add": 1934,
+        "reduce_sum": 1213,
+        "div": 1354,
+        "sub": 1026,
+        "mul": 5807,
+        "rsqrt": 233,
+        "slice": 611,
+        "squeeze": 562,
+        "integer_pow": 26,
+        "custom_jvp_call": 24,
+        "concatenate": 96,
+        "iota": 24,
+        "neg": 159,
+        "gather": 192,
+        "split": 48,
+        "custom_vjp_call": 13,
+        "pad": 39,
+        "pallas_call": 26,
+        "get": 113,
+        "min": 39,
+        "select_n": 5,
+        "swap": 62,
+        "max": 188,
+        "reduce_max": 2,
+        "add_any": 558,
+        "scatter-add": 192,
+        "psum": 2
+      },
+      "integer_index_operations": [
+        {
+          "primitive": "sign",
+          "dtypes": [
+            "int32"
+          ],
+          "floating": false
+        },
+        {
+          "primitive": "sign",
+          "dtypes": [
+            "int32"
+          ],
+          "floating": false
+        },
+        {
+          "primitive": "rem",
+          "dtypes": [
+            "int32"
+          ],
+          "floating": false
+        },
+        {
+          "primitive": "rem",
+          "dtypes": [
+            "int32"
+          ],
+          "floating": false
+        }
+      ],
+      "arm": "algebraic_v2",
+      "scale": "vit-b16"
+    },
+    {
+      "pure": true,
+      "unexpected_float_operations": [],
+      "floating_primitives": {
+        "pjit": 169,
+        "shard_map": 1,
+        "reshape": 81,
+        "transpose": 163,
+        "convert_element_type": 343,
+        "dot_general": 119,
+        "broadcast_in_dim": 690,
+        "add": 2294,
+        "reduce_sum": 512,
+        "div": 1059,
+        "sub": 588,
+        "mul": 5011,
+        "rsqrt": 441,
+        "slice": 1234,
+        "squeeze": 1105,
+        "closed_call": 48,
+        "scan": 52,
+        "gather": 200,
+        "concatenate": 50,
+        "custom_vjp_call": 26,
+        "pad": 11,
+        "pallas_call": 28,
+        "get": 14,
+        "min": 30,
+        "select_n": 7,
+        "swap": 7,
+        "neg": 64,
+        "custom_jvp_call": 25,
+        "bitcast_convert_type": 1,
+        "max": 345,
+        "reduce_max": 2,
+        "add_any": 116,
+        "remat2": 24,
+        "integer_pow": 4,
+        "split": 2,
+        "scatter-add": 8,
+        "psum": 2
+      },
+      "integer_index_operations": [],
+      "arm": "algebraic",
+      "scale": "vit-l16"
+    },
+    {
+      "pure": true,
+      "unexpected_float_operations": [],
+      "floating_primitives": {
+        "pjit": 195,
+        "shard_map": 1,
+        "reshape": 95,
+        "transpose": 215,
+        "convert_element_type": 343,
+        "dot_general": 119,
+        "broadcast_in_dim": 2299,
+        "add": 3638,
+        "reduce_sum": 537,
+        "div": 2407,
+        "sub": 1984,
+        "mul": 9057,
+        "rsqrt": 405,
+        "slice": 1134,
+        "squeeze": 1105,
+        "custom_jvp_call": 50,
+        "concatenate": 152,
+        "gather": 400,
+        "split": 52,
+        "custom_vjp_call": 26,
+        "pad": 7,
+        "pallas_call": 28,
+        "get": 14,
+        "min": 30,
+        "select_n": 8,
+        "swap": 7,
+        "max": 370,
+        "bitcast_convert_type": 1,
+        "integer_pow": 4,
+        "reduce_max": 2,
+        "add_any": 100,
+        "neg": 40,
+        "remat2": 24,
+        "iota": 2,
+        "scatter-add": 16,
+        "psum": 2
+      },
+      "integer_index_operations": [
+        {
+          "primitive": "sign",
+          "dtypes": [
+            "int32"
+          ],
+          "floating": false
+        },
+        {
+          "primitive": "sign",
+          "dtypes": [
+            "int32"
+          ],
+          "floating": false
+        },
+        {
+          "primitive": "rem",
+          "dtypes": [
+            "int32"
+          ],
+          "floating": false
+        },
+        {
+          "primitive": "rem",
+          "dtypes": [
+            "int32"
+          ],
+          "floating": false
+        },
+        {
+          "primitive": "sign",
+          "dtypes": [
+            "int32"
+          ],
+          "floating": false
+        },
+        {
+          "primitive": "sign",
+          "dtypes": [
+            "int32"
+          ],
+          "floating": false
+        },
+        {
+          "primitive": "rem",
+          "dtypes": [
+            "int32"
+          ],
+          "floating": false
+        },
+        {
+          "primitive": "rem",
+          "dtypes": [
+            "int32"
+          ],
+          "floating": false
+        }
+      ],
+      "arm": "algebraic_v2",
+      "scale": "vit-l16"
+    }
+  ],
+  "source_sha256": "d967f519b73cd8a0d569015a24b4a8c7a5f6e0e4da9b650a764391d88c34068b",
+  "producer_sha256": "d9a58a97ea0024069fbe8b6b928e568b0595827e83651802ae669594a906403b",
+  "scope": "Full B/L model and optimizer, recursive Pallas programs; one abstract CPU shard for tracing only. Real TPU execution/HLO evidence comes from smoke audits."
+}

@@ -1,0 +1,19 @@
+Launching smoke_vit-b16_standard_s42 across 4 hosts
+Launching smoke_vit-b16_algebraic_s42 across 4 hosts
+Launching smoke_vit-b16_algebraic_v2_s42 across 4 hosts
+Launching smoke_vit-b16_standard_s43 across 4 hosts
+Launching smoke_vit-b16_algebraic_s43 across 4 hosts
+Launching smoke_vit-b16_algebraic_v2_s43 across 4 hosts
+Launching smoke_vit-b16_standard_s44 across 4 hosts
+Launching smoke_vit-b16_algebraic_s44 across 4 hosts
+Launching smoke_vit-b16_algebraic_v2_s44 across 4 hosts
+Launching smoke_vit-l16_standard_s42 across 4 hosts
+Launching smoke_vit-l16_algebraic_s42 across 4 hosts
+Launching smoke_vit-l16_algebraic_v2_s42 across 4 hosts
+Launching smoke_vit-l16_standard_s43 across 4 hosts
+Launching smoke_vit-l16_algebraic_s43 across 4 hosts
+Launching smoke_vit-l16_algebraic_v2_s43 across 4 hosts
+Launching smoke_vit-l16_standard_s44 across 4 hosts
+Launching smoke_vit-l16_algebraic_s44 across 4 hosts
+Launching smoke_vit-l16_algebraic_v2_s44 across 4 hosts
+Pod smoke, checkpoint resume, selection and reporting passed

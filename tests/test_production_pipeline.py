@@ -93,3 +93,22 @@ def test_report_and_selection_require_complete_paired_evidence(tmp_path):
         select(matrix,records)
     selected=select(matrix,records,allow_synthetic=True)
     assert selected["synthetic"] and len(selected["choices"])==2
+
+
+def test_complete_sweep_selects_paired_minival_mean_and_ignores_validation():
+    from analysis.production_select import select
+    matrix=jobs("sweep")
+    records=[]
+    for cfg in matrix:
+        candidate=int(cfg["name"].rsplit("_c",1)[1])
+        score={0:0.7,1:(0.99 if cfg["seed"]==42 else 0.4),2:0.8,3:0.8}.get(candidate,0.3)
+        records.append({"config":cfg,"complete":True,"nonfinite_steps":0,"devices":16,"processes":4,
+                        "source_sha256":"explicit test fixture","dataset_metadata":{"test_fixture":True},
+                        "results":{"minival":{"top1":score},"val":{"top1":0.999 if candidate==1 else 0.1}}})
+    selected=select(matrix,records)
+    for scale in ("vit-b16","vit-l16"):
+        for arm in ("standard","algebraic","algebraic_v2"):
+            winner=selected["choices"][scale][arm]
+            assert winner["minival_top1_mean"]==pytest.approx(0.8)
+            assert winner["weight_decay"]==0.03
+            assert all(name.endswith("_c2") for name in winner["run_names"])

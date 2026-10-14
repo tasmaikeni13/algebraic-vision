@@ -7,6 +7,8 @@ its scoped comparison gate, reproducible simulations and Lean proofs.
 The `standard` and `algebraic` baseline equations, parameter initialization,
 forward values and VJPs remain frozen. Production `algebraic_v2` and the
 three-arm B/16 and L/16 pipelines are described in [PHASES.md](PHASES.md).
+The [production verification report](results/verification/REPORT.md) records
+the completed TPU smoke matrix, kernel benchmarks and completion audit.
 The original two-arm commands below remain available for reproducibility.
 
 A Vision Transformer whose forward pass, backward pass and training loss use

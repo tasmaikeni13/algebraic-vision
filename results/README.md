@@ -18,3 +18,11 @@ the Git commit that produced it.
 | `main/` | Full ImageNet-1k training runs | `experiments/main.py`, `analysis/main_report.py` |
 | `analysis/` | Symbolic checks, finite precision, signal propagation, stress test, purity audit | `analysis/*.py`, `scripts/audit_purity.py` |
 | `kernels/` | Attention kernel benchmark on TPU v4 | `scripts/bench_attention.py` |
+# Production phases 2–5
+
+The current [verification report](verification/REPORT.md) and
+[completion audit](verification/completion.json) cover all eighteen full-pod
+synthetic smoke runs. `smoke/report/` contains paired statistics and PDF/PNG
+figures; `configs/` contains the 108-job sweep and blocked main template.
+Full sweeps and main training remain for the operator. These synthetic metrics
+are pipeline verification, not ImageNet accuracy evidence.

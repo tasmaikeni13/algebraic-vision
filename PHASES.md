@@ -24,6 +24,9 @@ L/16 applies a matched RandAugment policy, Beta Mixup/CutMix and stochastic
 depth 0.2. Every arm for a seed shares data order, crop/flip/mixing streams,
 shared parameter initialization and token budgets. Sweep budgets are 30
 epochs; main budgets are 300, excluding the 10,000 minival images.
+Pallas grids mark their batch/head axes parallel, enabling execution on both
+TensorCores of each v4 JAX device as described in the
+[JAX Megacore guide](https://docs.jax.dev/en/latest/pallas/tpu/pipelining.html).
 
 AdamW bias-correction constants and warmup/cosine learning rates are computed
 on the host and supplied as scalar arguments. The compiled algebraic update
@@ -57,15 +60,19 @@ python -m pip install -r requirements-tpu.txt
 JAX_PLATFORMS=cpu python -m pytest -q
 (cd formal && lake build)
 python -m experiments.production smoke --out results/configs/smoke.json
-python -m scripts.pod results/configs/smoke.json
+python -m scripts.smoke_production
 python -m analysis.production_fairness results/configs/smoke.json --results results
 python -m analysis.production_report results/configs/smoke.json --output results/smoke/report
+JAX_PLATFORMS=cpu python -m analysis.production.verify
 ```
 
 Smoke jobs are synthetic, use the full B/L batch sizes, run three steps and
 evaluate/checkpoint/serialize diagnostics. Their accuracies are pipeline
 checks only. Pod runtime packages must be installed in the same `.venv` on
 `w1`, `w2`, `w3`; the launcher syncs code/configs, not Python environments.
+It checks device occupancy on every host before launch and waits for an
+existing workload to release the pod. The smoke driver includes a one-step
+checkpoint followed by resume to the configured three steps.
 
 ## Operator commands: Phase 4
 

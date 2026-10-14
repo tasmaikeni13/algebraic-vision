@@ -1,0 +1,252 @@
+{
+  "complete": true,
+  "source_sha256": "d967f519b73cd8a0d569015a24b4a8c7a5f6e0e4da9b650a764391d88c34068b",
+  "requirements": [
+    {
+      "requirement": "smoke: full paired B/L matrix",
+      "satisfied": true,
+      "evidence": "results/configs/smoke.json; fairness validator"
+    },
+    {
+      "requirement": "sweep: full paired B/L matrix",
+      "satisfied": true,
+      "evidence": "results/configs/sweep.json; fairness validator"
+    },
+    {
+      "requirement": "main_template: full paired B/L matrix",
+      "satisfied": true,
+      "evidence": "results/configs/main.template.json; fairness validator"
+    },
+    {
+      "requirement": "operator-only full runs",
+      "satisfied": true,
+      "evidence": "main template cannot pass ProductionConfig.validate; scripts/pod.py requires explicit execution flag"
+    },
+    {
+      "requirement": "108-run equal tuning budget and minival-only selection",
+      "satisfied": true,
+      "evidence": "sweep config matrix and analysis/production_select.py"
+    },
+    {
+      "requirement": "full-budget run matrices were not executed",
+      "satisfied": true,
+      "evidence": "no sweep/main result records; only synthetic smoke executed"
+    },
+    {
+      "requirement": "bounded distributed run: smoke_vit-b16_standard_s42",
+      "satisfied": true,
+      "evidence": "results/smoke/vit-b16/standard_s42.json"
+    },
+    {
+      "requirement": "bounded distributed run: smoke_vit-b16_algebraic_s42",
+      "satisfied": true,
+      "evidence": "results/smoke/vit-b16/algebraic_s42.json"
+    },
+    {
+      "requirement": "bounded distributed run: smoke_vit-b16_algebraic_v2_s42",
+      "satisfied": true,
+      "evidence": "results/smoke/vit-b16/algebraic_v2_s42.json"
+    },
+    {
+      "requirement": "bounded distributed run: smoke_vit-b16_standard_s43",
+      "satisfied": true,
+      "evidence": "results/smoke/vit-b16/standard_s43.json"
+    },
+    {
+      "requirement": "bounded distributed run: smoke_vit-b16_algebraic_s43",
+      "satisfied": true,
+      "evidence": "results/smoke/vit-b16/algebraic_s43.json"
+    },
+    {
+      "requirement": "bounded distributed run: smoke_vit-b16_algebraic_v2_s43",
+      "satisfied": true,
+      "evidence": "results/smoke/vit-b16/algebraic_v2_s43.json"
+    },
+    {
+      "requirement": "bounded distributed run: smoke_vit-b16_standard_s44",
+      "satisfied": true,
+      "evidence": "results/smoke/vit-b16/standard_s44.json"
+    },
+    {
+      "requirement": "bounded distributed run: smoke_vit-b16_algebraic_s44",
+      "satisfied": true,
+      "evidence": "results/smoke/vit-b16/algebraic_s44.json"
+    },
+    {
+      "requirement": "bounded distributed run: smoke_vit-b16_algebraic_v2_s44",
+      "satisfied": true,
+      "evidence": "results/smoke/vit-b16/algebraic_v2_s44.json"
+    },
+    {
+      "requirement": "bounded distributed run: smoke_vit-l16_standard_s42",
+      "satisfied": true,
+      "evidence": "results/smoke/vit-l16/standard_s42.json"
+    },
+    {
+      "requirement": "bounded distributed run: smoke_vit-l16_algebraic_s42",
+      "satisfied": true,
+      "evidence": "results/smoke/vit-l16/algebraic_s42.json"
+    },
+    {
+      "requirement": "bounded distributed run: smoke_vit-l16_algebraic_v2_s42",
+      "satisfied": true,
+      "evidence": "results/smoke/vit-l16/algebraic_v2_s42.json"
+    },
+    {
+      "requirement": "bounded distributed run: smoke_vit-l16_standard_s43",
+      "satisfied": true,
+      "evidence": "results/smoke/vit-l16/standard_s43.json"
+    },
+    {
+      "requirement": "bounded distributed run: smoke_vit-l16_algebraic_s43",
+      "satisfied": true,
+      "evidence": "results/smoke/vit-l16/algebraic_s43.json"
+    },
+    {
+      "requirement": "bounded distributed run: smoke_vit-l16_algebraic_v2_s43",
+      "satisfied": true,
+      "evidence": "results/smoke/vit-l16/algebraic_v2_s43.json"
+    },
+    {
+      "requirement": "bounded distributed run: smoke_vit-l16_standard_s44",
+      "satisfied": true,
+      "evidence": "results/smoke/vit-l16/standard_s44.json"
+    },
+    {
+      "requirement": "bounded distributed run: smoke_vit-l16_algebraic_s44",
+      "satisfied": true,
+      "evidence": "results/smoke/vit-l16/algebraic_s44.json"
+    },
+    {
+      "requirement": "bounded distributed run: smoke_vit-l16_algebraic_v2_s44",
+      "satisfied": true,
+      "evidence": "results/smoke/vit-l16/algebraic_v2_s44.json"
+    },
+    {
+      "requirement": "exhaustive allowed floating-point operations",
+      "satisfied": true,
+      "evidence": "typed_purity.json: real arithmetic/structural allowlist, integer sign/remainder verified separately"
+    },
+    {
+      "requirement": "all training evidence uses the current implementation",
+      "satisfied": true,
+      "evidence": "record source hashes match production.source_hash()"
+    },
+    {
+      "requirement": "all arms/scales run on full v4-32 topology",
+      "satisfied": true,
+      "evidence": "actual runtime device/host metadata"
+    },
+    {
+      "requirement": "actual full B/16 and L/16 model shapes and parameter counts",
+      "satisfied": true,
+      "evidence": "runtime model_config and initialized parameter counts for every arm/seed"
+    },
+    {
+      "requirement": "full B/L batch sizes and 1\u20135 finite steps",
+      "satisfied": true,
+      "evidence": "actual trained steps, batches, histories"
+    },
+    {
+      "requirement": "actual matched image and patch-token budgets",
+      "satisfied": true,
+      "evidence": "runtime counters for every arm/seed, not configuration intent alone"
+    },
+    {
+      "requirement": "compilation, memory footprint and throughput",
+      "satisfied": true,
+      "evidence": "runtime compile timing, memory_analysis(), synchronized images/s"
+    },
+    {
+      "requirement": "multi-host checkpoint resume",
+      "satisfied": true,
+      "evidence": "first pod run stopped at step 1 then resumed to 3"
+    },
+    {
+      "requirement": "validation Top-1, NLL, ECE and per-block diagnostics",
+      "satisfied": true,
+      "evidence": "distributed masked evaluation plus per-block entropy/score diagnostics"
+    },
+    {
+      "requirement": "TPU forward/loss/VJP/optimizer purity at both scales",
+      "satisfied": true,
+      "evidence": "whole-step optimized HLO plus recursive Pallas program audits for all 12 algebraic runs"
+    },
+    {
+      "requirement": "exact compiled root-count reduction",
+      "satisfied": true,
+      "evidence": {
+        "vit-b16": {
+          "v1": 334,
+          "v2": 226,
+          "reduction": 108
+        },
+        "vit-l16": {
+          "v1": 826,
+          "v2": 490,
+          "reduction": 336
+        }
+      }
+    },
+    {
+      "requirement": "full-pod B/L FP32/BF16 Pallas forward and analytic VJP validation",
+      "satisfied": true,
+      "evidence": "results/verification/kernels_tpu.json; all Q/K/V and mass/margin errors"
+    },
+    {
+      "requirement": "current kernel benchmark provenance",
+      "satisfied": true,
+      "evidence": "kernel producer source snapshot"
+    },
+    {
+      "requirement": "selected v2 within 15% of standard FlashAttention",
+      "satisfied": true,
+      "evidence": [
+        1.0829737210617658,
+        1.065811572522239
+      ]
+    },
+    {
+      "requirement": "root-free proposal available only as rejected ablation",
+      "satisfied": true,
+      "evidence": "rational_kernel.py preprocessing separated; Phase 1 retained-E8 selection explicitly documented"
+    },
+    {
+      "requirement": "selection serialization",
+      "satisfied": true,
+      "evidence": "synthetic smoke selections; production main refuses them"
+    },
+    {
+      "requirement": "paired differences, CIs, one-sided tests and figures",
+      "satisfied": true,
+      "evidence": "production_report summary and standalone PDF/PNG figures"
+    },
+    {
+      "requirement": "CPU regression, baseline equivalence, kernel and resume tests",
+      "satisfied": true,
+      "evidence": "results/verification/tests.log; includes exact nonzero-head frozen baseline forward/VJP comparison"
+    },
+    {
+      "requirement": "Lean build with existing proofs preserved",
+      "satisfied": true,
+      "evidence": "results/verification/lean.log"
+    },
+    {
+      "requirement": "zero sorry admissions",
+      "satisfied": true,
+      "evidence": "all repository Lean source files"
+    },
+    {
+      "requirement": "formal theorem axiom audit",
+      "satisfied": true,
+      "evidence": "results/verification/axioms.log; every current local theorem re-audited"
+    },
+    {
+      "requirement": "copy-paste operator commands",
+      "satisfied": true,
+      "evidence": "PHASES.md Phase 4 and Phase 5 operator commands"
+    }
+  ],
+  "phase1_refinement": "Selected E8 attention retained; zero inner roots applies to rejected rational ablation only. No claim that selected v2 cures E8 score attenuation.",
+  "scope": "Phases 2\u20133 implementation/execution and phases 4\u20135 preparation/smoke; long training deliberately unexecuted"
+}

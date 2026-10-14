@@ -48,9 +48,9 @@
           "convert": 475,
           "convolution": 149,
           "copy": 435,
-          "copy-done": 913,
-          "copy-start": 913,
-          "custom-call": 502,
+          "copy-done": 1032,
+          "copy-start": 1032,
+          "custom-call": 470,
           "divide": 392,
           "dynamic-slice": 192,
           "dynamic-update-slice": 144,
@@ -71,14 +71,14 @@
           "scatter": 96,
           "select": 218,
           "slice": 258,
-          "slice-done": 1136,
-          "slice-start": 1136,
+          "slice-done": 1008,
+          "slice-start": 1008,
           "subtract": 494,
           "transpose": 288,
           "tuple": 514
         },
         "rsqrt": 334,
-        "opaque_custom_calls": 502
+        "opaque_custom_calls": 470
       },
       "nested_programs": {
         "pure": true,
@@ -134,7 +134,8 @@
         "scope": "all nested JAX, shard_map, custom derivative and Pallas programs; static instruction sites, not scalar operations"
       },
       "pure": true,
-      "source_sha256": "e2721e3fe54e1d4715062ad90df23476eec81995b15f352eb86ebc0b5c170d45"
+      "source_sha256": "d967f519b73cd8a0d569015a24b4a8c7a5f6e0e4da9b650a764391d88c34068b",
+      "executed_run": "results/smoke/vit-b16/algebraic_s42.json"
     },
     {
       "arm": "algebraic_v2",
@@ -184,9 +185,9 @@
           "convert": 595,
           "convolution": 149,
           "copy": 555,
-          "copy-done": 994,
-          "copy-start": 994,
-          "custom-call": 585,
+          "copy-done": 1112,
+          "copy-start": 1112,
+          "custom-call": 553,
           "divide": 1327,
           "dynamic-update-slice": 672,
           "fusion": 1947,
@@ -208,14 +209,14 @@
           "select": 150,
           "sign": 1,
           "slice": 474,
-          "slice-done": 1852,
-          "slice-start": 1852,
+          "slice-done": 1724,
+          "slice-start": 1724,
           "subtract": 1740,
           "transpose": 480,
           "tuple": 615
         },
         "rsqrt": 226,
-        "opaque_custom_calls": 585
+        "opaque_custom_calls": 553
       },
       "nested_programs": {
         "pure": true,
@@ -273,7 +274,8 @@
         "scope": "all nested JAX, shard_map, custom derivative and Pallas programs; static instruction sites, not scalar operations"
       },
       "pure": true,
-      "source_sha256": "667cd5df358f53a3b88eb5553a3e087c94aead50e39e3e77ae7d64d86d3fb0f9"
+      "source_sha256": "d967f519b73cd8a0d569015a24b4a8c7a5f6e0e4da9b650a764391d88c34068b",
+      "executed_run": "results/smoke/vit-b16/algebraic_v2_s42.json"
     },
     {
       "arm": "algebraic",
@@ -324,9 +326,9 @@
           "convert": 1159,
           "convolution": 365,
           "copy": 1179,
-          "copy-done": 2297,
-          "copy-start": 2297,
-          "custom-call": 1407,
+          "copy-done": 2484,
+          "copy-start": 2484,
+          "custom-call": 1338,
           "divide": 920,
           "dynamic-slice": 384,
           "dynamic-update-slice": 384,
@@ -350,15 +352,15 @@
           "shift-left": 539,
           "shift-right-logical": 564,
           "slice": 872,
-          "slice-done": 3028,
-          "slice-start": 3028,
+          "slice-done": 2752,
+          "slice-start": 2752,
           "subtract": 1285,
           "transpose": 768,
           "tuple": 1190,
           "xor": 615
         },
         "rsqrt": 826,
-        "opaque_custom_calls": 1407
+        "opaque_custom_calls": 1338
       },
       "nested_programs": {
         "pure": true,
@@ -421,7 +423,8 @@
         "scope": "all nested JAX, shard_map, custom derivative and Pallas programs; static instruction sites, not scalar operations"
       },
       "pure": true,
-      "source_sha256": "7264f7b3f2478168ca84d3b5d1056dca5dbd5369b1bc8ece1f2286833dff56ba"
+      "source_sha256": "d967f519b73cd8a0d569015a24b4a8c7a5f6e0e4da9b650a764391d88c34068b",
+      "executed_run": "results/smoke/vit-l16/algebraic_s42.json"
     },
     {
       "arm": "algebraic_v2",
@@ -472,9 +475,9 @@
           "convert": 1711,
           "convolution": 365,
           "copy": 1275,
-          "copy-done": 2054,
-          "copy-start": 2054,
-          "custom-call": 1436,
+          "copy-done": 2243,
+          "copy-start": 2243,
+          "custom-call": 1366,
           "divide": 4699,
           "dynamic-update-slice": 2688,
           "fusion": 5410,
@@ -499,15 +502,15 @@
           "shift-right-logical": 564,
           "sign": 1,
           "slice": 1496,
-          "slice-done": 3912,
-          "slice-start": 3912,
+          "slice-done": 3632,
+          "slice-start": 3632,
           "subtract": 6372,
           "transpose": 1152,
           "tuple": 1746,
           "xor": 615
         },
         "rsqrt": 490,
-        "opaque_custom_calls": 1436
+        "opaque_custom_calls": 1366
       },
       "nested_programs": {
         "pure": true,
@@ -571,7 +574,10 @@
         "scope": "all nested JAX, shard_map, custom derivative and Pallas programs; static instruction sites, not scalar operations"
       },
       "pure": true,
-      "source_sha256": "12eaa708cde2b68e5c0fdf342865624e5e4000967fe50b65fe813e5454713a9b"
+      "source_sha256": "d967f519b73cd8a0d569015a24b4a8c7a5f6e0e4da9b650a764391d88c34068b",
+      "executed_run": "results/smoke/vit-l16/algebraic_v2_s42.json"
     }
-  ]
+  ],
+  "source_sha256": "d967f519b73cd8a0d569015a24b4a8c7a5f6e0e4da9b650a764391d88c34068b",
+  "scope": "Actual executed three-step whole-pod updates; representative seed 42. All twelve algebraic run audits are stored beside smoke results."
 }
