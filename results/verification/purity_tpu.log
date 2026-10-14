@@ -1,0 +1,4 @@
+vit-b16/algebraic: pure=True, HLO roots=334, nested roots=287
+vit-b16/algebraic_v2: pure=True, HLO roots=226, nested roots=233
+vit-l16/algebraic: pure=True, HLO roots=826, nested roots=441
+vit-l16/algebraic_v2: pure=True, HLO roots=490, nested roots=405

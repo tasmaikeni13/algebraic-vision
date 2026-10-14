@@ -1,0 +1,1 @@
+process 2/4 local 4 global 16 sum 40.0 (expected 40)

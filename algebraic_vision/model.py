@@ -88,6 +88,13 @@ def algebraic_config(**overrides):
     return replace(base, **overrides)
 
 
+def algebraic_v2_config(**overrides):
+    """Phase 1 selected v2: E8, bounded rank-2 positions, rational gate/pool."""
+    base = ViTConfig(attention="radical", sink="none", activation="rational",
+                     rotary="bicayley2d", pool="inverse_energy")
+    return replace(base, **overrides)
+
+
 # --------------------------------------------------------------------- init
 
 def _xavier(key, fan_in, fan_out, shape):
@@ -150,6 +157,9 @@ def init_params(cfg, key):
             block["sink"] = jnp.full((cfg.heads,), cfg.sink_init, jnp.float32)
         if cfg.rotary == "cayley2d_mixed":
             block["rot"] = mixed_rotation_init(cfg, next(keys))
+        elif cfg.rotary == "bicayley2d":
+            from algebraic_vision.v2 import rotation_init
+            block["rot"] = rotation_init(cfg, next(keys))
         else:
             next(keys)
         params["blocks"].append(block)
@@ -255,6 +265,9 @@ def sink_mass(cfg, block):
 
 
 def activation(cfg, x):
+    if cfg.activation == "rational":
+        from algebraic_vision.v2 import rational_gate
+        return rational_gate(x)
     if cfg.activation == "gelu":
         return jax.nn.gelu(x, approximate=False)
     if cfg.activation == "alu":
@@ -265,8 +278,13 @@ def activation(cfg, x):
 
 
 def attend(cfg, q, k, v, block):
-    if cfg.attention_backend not in ("auto", "xla", "pallas"):
+    if cfg.attention_backend not in ("auto", "xla", "pallas", "pallas_flash"):
         raise ValueError(f"unknown attention backend {cfg.attention_backend!r}")
+    if cfg.attention_backend == "pallas_flash":
+        if cfg.attention != "softmax":
+            raise ValueError("pallas_flash requires softmax attention")
+        from algebraic_vision.flash import flash_attention
+        return flash_attention(q, k, v)
     if (cfg.attention_backend == "pallas" or
             (cfg.attention_backend == "auto" and jax.default_backend() == "tpu")):
         from algebraic_vision.kernels import fused_attention
@@ -286,7 +304,7 @@ def shared_rotary_tables(cfg):
     Fixed rotations use one table for every block; learned rotations are
     built per block from its parameters (see block_qkv).
     """
-    if cfg.rotary in ("none", "cayley2d_mixed"):
+    if cfg.rotary in ("none", "cayley2d_mixed", "bicayley2d"):
         return None
     return rotary_tables(cfg)
 
@@ -301,6 +319,10 @@ def block_qkv(cfg, x, block, tables):
     q, k, v = (qkv[:, :, i].transpose(0, 2, 1, 3) for i in range(3))
     if cfg.rotary == "cayley2d_mixed":
         tables = mixed_rotary_tables(cfg, block["rot"])
+    if cfg.rotary == "bicayley2d":
+        from algebraic_vision.v2 import rotate, rotary_tables as v2_tables
+        tables = v2_tables(cfg, block["rot"])
+        return rotate(q, tables), rotate(k, tables), v
     if tables is not None:
         q = rotate_pairs(q, *tables)
         k = rotate_pairs(k, *tables)
@@ -354,8 +376,12 @@ def forward(cfg, params, images, return_features=False):
         step = jax.checkpoint(step)
     for block in params["blocks"]:
         x = step(x, block, tables)
-    x = layer_norm(x, params["norm"])
-    pooled = x[:, 0] if cfg.pool == "cls" else jnp.mean(x, axis=1)
+    if cfg.pool == "inverse_energy":
+        from algebraic_vision.v2 import inverse_energy_pool
+        pooled = layer_norm(inverse_energy_pool(x), params["norm"])
+    else:
+        x = layer_norm(x, params["norm"])
+        pooled = x[:, 0] if cfg.pool == "cls" else jnp.mean(x, axis=1)
     logits = dense(pooled, params["head"], jnp.float32)
     if return_features:
         return logits, x

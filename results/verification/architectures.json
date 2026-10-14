@@ -1,0 +1,68 @@
+[
+  {
+    "scale": "vit-b16",
+    "arm": "standard",
+    "parameters": 86566120,
+    "width": 768,
+    "depth": 12,
+    "heads": 12,
+    "head_dim": 64,
+    "mlp_dim": 3072,
+    "patches": 196
+  },
+  {
+    "scale": "vit-b16",
+    "arm": "algebraic",
+    "parameters": 86575336,
+    "width": 768,
+    "depth": 12,
+    "heads": 12,
+    "head_dim": 64,
+    "mlp_dim": 3072,
+    "patches": 196
+  },
+  {
+    "scale": "vit-b16",
+    "arm": "algebraic_v2",
+    "parameters": 86570728,
+    "width": 768,
+    "depth": 12,
+    "heads": 12,
+    "head_dim": 64,
+    "mlp_dim": 3072,
+    "patches": 196
+  },
+  {
+    "scale": "vit-l16",
+    "arm": "standard",
+    "parameters": 304324584,
+    "width": 1024,
+    "depth": 24,
+    "heads": 16,
+    "head_dim": 64,
+    "mlp_dim": 4096,
+    "patches": 196
+  },
+  {
+    "scale": "vit-l16",
+    "arm": "algebraic",
+    "parameters": 304349160,
+    "width": 1024,
+    "depth": 24,
+    "heads": 16,
+    "head_dim": 64,
+    "mlp_dim": 4096,
+    "patches": 196
+  },
+  {
+    "scale": "vit-l16",
+    "arm": "algebraic_v2",
+    "parameters": 304336872,
+    "width": 1024,
+    "depth": 24,
+    "heads": 16,
+    "head_dim": 64,
+    "mlp_dim": 4096,
+    "patches": 196
+  }
+]

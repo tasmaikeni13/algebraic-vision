@@ -1,0 +1,1899 @@
+{
+  "backend": "tpu",
+  "device_kind": "TPU v4",
+  "devices": 16,
+  "processes": 4,
+  "source_sha256": "05fe35423df6d09cb3751e22b556bb32635a5de838ea3af19522e79c5f11b01c",
+  "records": [
+    {
+      "scale": "vit-b16",
+      "arm": "standard",
+      "dtype": "float32",
+      "shape": [
+        1024,
+        12,
+        196,
+        64
+      ],
+      "matmul_precision": "float32",
+      "forward_ms": 1.7322254716418684,
+      "backward_ms": 3.425189497647807,
+      "forward_max_abs_error": 4.76837158203125e-07,
+      "gradient_errors_q_k_v_margin": [
+        {
+          "max_abs": 8.344650268554688e-07,
+          "relative_l2": 1.3050699010364042e-07
+        },
+        {
+          "max_abs": 1.1920928955078125e-06,
+          "relative_l2": 1.246000493893007e-07
+        },
+        {
+          "max_abs": 5.960464477539062e-07,
+          "relative_l2": 1.1354947559993889e-07
+        },
+        {
+          "max_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      ],
+      "forward_relative_l2_error": 1.1310576297773878e-07,
+      "forward_abs_bound": 5e-05,
+      "forward_relative_bound": 0.0001,
+      "gradient_relative_bound": 0.001,
+      "nested_programs": {
+        "pure": false,
+        "forbidden": {
+          "exp": 2
+        },
+        "primitives": {
+          "add": 2,
+          "broadcast_in_dim": 14,
+          "convert_element_type": 2,
+          "custom_vjp_call": 1,
+          "div": 2,
+          "dot_general": 7,
+          "exp": 2,
+          "get": 9,
+          "iota": 2,
+          "lt": 2,
+          "mul": 9,
+          "pad": 1,
+          "pallas_call": 2,
+          "pjit": 10,
+          "program_id": 2,
+          "psum": 1,
+          "reduce_max": 2,
+          "reduce_sum": 5,
+          "select_n": 1,
+          "shard_map": 1,
+          "slice": 4,
+          "sub": 3,
+          "swap": 5
+        },
+        "rsqrt": 0,
+        "scope": "all nested JAX, shard_map, custom derivative and Pallas programs; static instruction sites, not scalar operations"
+      },
+      "hlo": {
+        "pure": true,
+        "forbidden": {},
+        "opcodes": {
+          "add": 2,
+          "all-reduce": 1,
+          "constant": 1,
+          "copy": 7,
+          "copy-done": 1,
+          "copy-start": 1,
+          "custom-call": 3,
+          "get-tuple-element": 4,
+          "pad": 4,
+          "parameter": 9,
+          "reduce": 1,
+          "slice": 3,
+          "slice-done": 8,
+          "slice-start": 8,
+          "tuple": 1
+        },
+        "rsqrt": 0,
+        "opaque_custom_calls": 3
+      },
+      "passed": true,
+      "latency_ratio_to_standard": 1.0
+    },
+    {
+      "scale": "vit-b16",
+      "arm": "algebraic",
+      "dtype": "float32",
+      "shape": [
+        1024,
+        12,
+        196,
+        64
+      ],
+      "matmul_precision": "float32",
+      "forward_ms": 2.0975999941583723,
+      "backward_ms": 3.837960015516728,
+      "forward_max_abs_error": 3.5762786865234375e-07,
+      "gradient_errors_q_k_v_margin": [
+        {
+          "max_abs": 3.5762786865234375e-07,
+          "relative_l2": 1.3509698248981294e-07
+        },
+        {
+          "max_abs": 4.76837158203125e-07,
+          "relative_l2": 1.3342679494598997e-07
+        },
+        {
+          "max_abs": 3.5762786865234375e-07,
+          "relative_l2": 1.2003253857528762e-07
+        },
+        {
+          "max_abs": 1.1324882507324219e-06,
+          "relative_l2": 3.4428265394126356e-07
+        }
+      ],
+      "forward_relative_l2_error": 1.1958519507970777e-07,
+      "forward_abs_bound": 5e-05,
+      "forward_relative_bound": 0.0001,
+      "gradient_relative_bound": 0.001,
+      "nested_programs": {
+        "pure": true,
+        "forbidden": {},
+        "primitives": {
+          "add": 8,
+          "broadcast_in_dim": 9,
+          "convert_element_type": 2,
+          "custom_vjp_call": 1,
+          "div": 6,
+          "dot_general": 7,
+          "ge": 2,
+          "get": 9,
+          "iota": 2,
+          "lt": 2,
+          "min": 2,
+          "mul": 27,
+          "neg": 1,
+          "pad": 1,
+          "pallas_call": 2,
+          "pjit": 12,
+          "program_id": 2,
+          "psum": 1,
+          "reduce_sum": 5,
+          "rsqrt": 2,
+          "select_n": 2,
+          "shard_map": 1,
+          "slice": 4,
+          "sub": 3,
+          "swap": 5
+        },
+        "rsqrt": 2,
+        "scope": "all nested JAX, shard_map, custom derivative and Pallas programs; static instruction sites, not scalar operations"
+      },
+      "hlo": {
+        "pure": true,
+        "forbidden": {},
+        "opcodes": {
+          "add": 2,
+          "all-reduce": 1,
+          "constant": 1,
+          "copy": 7,
+          "copy-done": 1,
+          "copy-start": 1,
+          "custom-call": 3,
+          "get-tuple-element": 4,
+          "pad": 4,
+          "parameter": 9,
+          "reduce": 1,
+          "slice": 3,
+          "slice-done": 8,
+          "slice-start": 8,
+          "tuple": 1
+        },
+        "rsqrt": 0,
+        "opaque_custom_calls": 3
+      },
+      "passed": true,
+      "latency_ratio_to_standard": 1.1508788889431945
+    },
+    {
+      "scale": "vit-b16",
+      "arm": "algebraic_v2",
+      "dtype": "float32",
+      "shape": [
+        1024,
+        12,
+        196,
+        64
+      ],
+      "matmul_precision": "float32",
+      "forward_ms": 2.0842150261159986,
+      "backward_ms": 3.8164900324773043,
+      "forward_max_abs_error": 3.5762786865234375e-07,
+      "gradient_errors_q_k_v_margin": [
+        {
+          "max_abs": 3.5762786865234375e-07,
+          "relative_l2": 1.3509698248981294e-07
+        },
+        {
+          "max_abs": 4.76837158203125e-07,
+          "relative_l2": 1.3342679494598997e-07
+        },
+        {
+          "max_abs": 3.5762786865234375e-07,
+          "relative_l2": 1.2003253857528762e-07
+        },
+        {
+          "max_abs": 1.1324882507324219e-06,
+          "relative_l2": 3.4428265394126356e-07
+        }
+      ],
+      "forward_relative_l2_error": 1.1958519507970777e-07,
+      "forward_abs_bound": 5e-05,
+      "forward_relative_bound": 0.0001,
+      "gradient_relative_bound": 0.001,
+      "nested_programs": {
+        "pure": true,
+        "forbidden": {},
+        "primitives": {
+          "add": 8,
+          "broadcast_in_dim": 9,
+          "convert_element_type": 2,
+          "custom_vjp_call": 1,
+          "div": 6,
+          "dot_general": 7,
+          "ge": 2,
+          "get": 9,
+          "iota": 2,
+          "lt": 2,
+          "min": 2,
+          "mul": 27,
+          "neg": 1,
+          "pad": 1,
+          "pallas_call": 2,
+          "pjit": 12,
+          "program_id": 2,
+          "psum": 1,
+          "reduce_sum": 5,
+          "rsqrt": 2,
+          "select_n": 2,
+          "shard_map": 1,
+          "slice": 4,
+          "sub": 3,
+          "swap": 5
+        },
+        "rsqrt": 2,
+        "scope": "all nested JAX, shard_map, custom derivative and Pallas programs; static instruction sites, not scalar operations"
+      },
+      "hlo": {
+        "pure": true,
+        "forbidden": {},
+        "opcodes": {
+          "add": 2,
+          "all-reduce": 1,
+          "constant": 1,
+          "copy": 7,
+          "copy-done": 1,
+          "copy-start": 1,
+          "custom-call": 3,
+          "get-tuple-element": 4,
+          "pad": 4,
+          "parameter": 9,
+          "reduce": 1,
+          "slice": 3,
+          "slice-done": 8,
+          "slice-start": 8,
+          "tuple": 1
+        },
+        "rsqrt": 0,
+        "opaque_custom_calls": 3
+      },
+      "passed": true,
+      "latency_ratio_to_standard": 1.1441206677627493
+    },
+    {
+      "scale": "vit-b16",
+      "arm": "flash_standard",
+      "dtype": "float32",
+      "shape": [
+        1024,
+        12,
+        196,
+        64
+      ],
+      "matmul_precision": "float32",
+      "forward_ms": 2.4255000171251595,
+      "backward_ms": 3.2977499649859965,
+      "forward_max_abs_error": 2.384185791015625e-06,
+      "gradient_errors_q_k_v_margin": [
+        {
+          "max_abs": 8.344650268554688e-07,
+          "relative_l2": 1.3050699010364042e-07
+        },
+        {
+          "max_abs": 1.1920928955078125e-06,
+          "relative_l2": 1.246000493893007e-07
+        },
+        {
+          "max_abs": 5.960464477539062e-07,
+          "relative_l2": 1.1354947559993889e-07
+        },
+        {
+          "max_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      ],
+      "forward_relative_l2_error": 8.673922025081993e-07,
+      "forward_abs_bound": 5e-05,
+      "forward_relative_bound": 0.0001,
+      "gradient_relative_bound": 0.001,
+      "nested_programs": {
+        "pure": false,
+        "forbidden": {
+          "exp": 3
+        },
+        "primitives": {
+          "add": 5,
+          "broadcast_in_dim": 20,
+          "convert_element_type": 5,
+          "div": 2,
+          "dot_general": 7,
+          "exp": 3,
+          "get": 8,
+          "iota": 2,
+          "lt": 2,
+          "max": 1,
+          "mul": 13,
+          "pad": 2,
+          "pallas_call": 2,
+          "pjit": 10,
+          "program_id": 1,
+          "psum": 1,
+          "reduce_max": 2,
+          "reduce_sum": 5,
+          "scan": 1,
+          "select_n": 2,
+          "shard_map": 1,
+          "slice": 4,
+          "sub": 4,
+          "swap": 5
+        },
+        "rsqrt": 0,
+        "scope": "all nested JAX, shard_map, custom derivative and Pallas programs; static instruction sites, not scalar operations"
+      },
+      "hlo": {
+        "pure": true,
+        "forbidden": {},
+        "opcodes": {
+          "add": 1,
+          "all-reduce": 1,
+          "broadcast": 1,
+          "constant": 1,
+          "copy": 7,
+          "custom-call": 3,
+          "get-tuple-element": 3,
+          "pad": 4,
+          "parameter": 6,
+          "slice": 3,
+          "slice-done": 8,
+          "slice-start": 8,
+          "tuple": 1
+        },
+        "rsqrt": 0,
+        "opaque_custom_calls": 3
+      },
+      "passed": true,
+      "latency_ratio_to_standard": 1.1097129116409674
+    },
+    {
+      "scale": "vit-b16",
+      "arm": "rational_ablation",
+      "dtype": "float32",
+      "shape": [
+        1024,
+        12,
+        196,
+        64
+      ],
+      "matmul_precision": "float32",
+      "forward_ms": 1.871929969638586,
+      "backward_ms": 3.8802644703537226,
+      "forward_max_abs_error": 3.5762786865234375e-07,
+      "gradient_errors_q_k_v_margin": [
+        {
+          "max_abs": 5.7220458984375e-06,
+          "relative_l2": 1.691955020532987e-07
+        },
+        {
+          "max_abs": 5.7220458984375e-06,
+          "relative_l2": 1.6656120749303227e-07
+        },
+        {
+          "max_abs": 3.5762786865234375e-07,
+          "relative_l2": 1.1964274904130434e-07
+        },
+        {
+          "max_abs": 0.0009765625,
+          "relative_l2": 1.436289267076063e-06
+        }
+      ],
+      "forward_relative_l2_error": 1.1637032315547913e-07,
+      "forward_abs_bound": 5e-05,
+      "forward_relative_bound": 0.0001,
+      "gradient_relative_bound": 0.001,
+      "nested_programs": {
+        "pure": true,
+        "forbidden": {},
+        "primitives": {
+          "add": 2,
+          "and": 1,
+          "broadcast_in_dim": 13,
+          "convert_element_type": 6,
+          "div": 5,
+          "dot_general": 7,
+          "eq": 2,
+          "get": 9,
+          "gt": 1,
+          "iota": 2,
+          "lt": 3,
+          "max": 1,
+          "min": 1,
+          "mul": 17,
+          "neg": 1,
+          "or": 1,
+          "pad": 2,
+          "pallas_call": 2,
+          "pjit": 14,
+          "program_id": 2,
+          "psum": 1,
+          "reduce_sum": 6,
+          "select_n": 3,
+          "shard_map": 1,
+          "slice": 4,
+          "sub": 4,
+          "swap": 5
+        },
+        "rsqrt": 0,
+        "scope": "all nested JAX, shard_map, custom derivative and Pallas programs; static instruction sites, not scalar operations"
+      },
+      "hlo": {
+        "pure": true,
+        "forbidden": {},
+        "opcodes": {
+          "add": 2,
+          "all-reduce": 1,
+          "constant": 1,
+          "copy": 7,
+          "copy-done": 1,
+          "copy-start": 1,
+          "custom-call": 3,
+          "get-tuple-element": 4,
+          "pad": 4,
+          "parameter": 9,
+          "reduce": 1,
+          "slice": 3,
+          "slice-done": 8,
+          "slice-start": 8,
+          "tuple": 1
+        },
+        "rsqrt": 0,
+        "opaque_custom_calls": 3
+      },
+      "passed": true,
+      "latency_ratio_to_standard": 1.1153251142761063
+    },
+    {
+      "scale": "vit-b16",
+      "arm": "standard",
+      "dtype": "bfloat16",
+      "shape": [
+        1024,
+        12,
+        196,
+        64
+      ],
+      "matmul_precision": "bfloat16",
+      "forward_ms": 0.9806500165723264,
+      "backward_ms": 1.7907450092025101,
+      "forward_max_abs_error": 0.001953125,
+      "gradient_errors_q_k_v_margin": [
+        {
+          "max_abs": 0.015625,
+          "relative_l2": 0.0015748892910778522
+        },
+        {
+          "max_abs": 0.015625,
+          "relative_l2": 0.0015889768255874515
+        },
+        {
+          "max_abs": 0.00390625,
+          "relative_l2": 4.5780678192386404e-05
+        },
+        {
+          "max_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      ],
+      "forward_relative_l2_error": 4.4937318307347596e-05,
+      "forward_abs_bound": 0.041875,
+      "forward_relative_bound": 0.01,
+      "gradient_relative_bound": 0.03,
+      "nested_programs": {
+        "pure": false,
+        "forbidden": {
+          "exp": 2
+        },
+        "primitives": {
+          "add": 2,
+          "broadcast_in_dim": 14,
+          "convert_element_type": 14,
+          "custom_vjp_call": 1,
+          "div": 2,
+          "dot_general": 7,
+          "exp": 2,
+          "get": 9,
+          "iota": 2,
+          "lt": 2,
+          "mul": 9,
+          "pad": 1,
+          "pallas_call": 2,
+          "pjit": 10,
+          "program_id": 2,
+          "psum": 1,
+          "reduce_max": 2,
+          "reduce_sum": 5,
+          "select_n": 1,
+          "shard_map": 1,
+          "slice": 4,
+          "sub": 3,
+          "swap": 5
+        },
+        "rsqrt": 0,
+        "scope": "all nested JAX, shard_map, custom derivative and Pallas programs; static instruction sites, not scalar operations"
+      },
+      "hlo": {
+        "pure": true,
+        "forbidden": {},
+        "opcodes": {
+          "add": 2,
+          "all-reduce": 1,
+          "constant": 2,
+          "copy": 7,
+          "copy-done": 1,
+          "copy-start": 1,
+          "custom-call": 4,
+          "get-tuple-element": 4,
+          "pad": 4,
+          "parameter": 9,
+          "reduce": 1,
+          "slice": 3,
+          "slice-done": 12,
+          "slice-start": 12,
+          "tuple": 1
+        },
+        "rsqrt": 0,
+        "opaque_custom_calls": 4
+      },
+      "passed": true,
+      "latency_ratio_to_standard": 1.0
+    },
+    {
+      "scale": "vit-b16",
+      "arm": "algebraic",
+      "dtype": "bfloat16",
+      "shape": [
+        1024,
+        12,
+        196,
+        64
+      ],
+      "matmul_precision": "bfloat16",
+      "forward_ms": 1.3235750084277242,
+      "backward_ms": 2.2214300115592778,
+      "forward_max_abs_error": 0.001953125,
+      "gradient_errors_q_k_v_margin": [
+        {
+          "max_abs": 0.0078125,
+          "relative_l2": 0.0015677503542974591
+        },
+        {
+          "max_abs": 0.0078125,
+          "relative_l2": 0.001586988801136613
+        },
+        {
+          "max_abs": 0.00390625,
+          "relative_l2": 4.851079938816838e-05
+        },
+        {
+          "max_abs": 0.004442036151885986,
+          "relative_l2": 0.0015134456334635615
+        }
+      ],
+      "forward_relative_l2_error": 4.7513600293314084e-05,
+      "forward_abs_bound": 0.03375,
+      "forward_relative_bound": 0.01,
+      "gradient_relative_bound": 0.03,
+      "nested_programs": {
+        "pure": true,
+        "forbidden": {},
+        "primitives": {
+          "add": 8,
+          "broadcast_in_dim": 9,
+          "convert_element_type": 14,
+          "custom_vjp_call": 1,
+          "div": 6,
+          "dot_general": 7,
+          "ge": 2,
+          "get": 9,
+          "iota": 2,
+          "lt": 2,
+          "min": 2,
+          "mul": 27,
+          "neg": 1,
+          "pad": 1,
+          "pallas_call": 2,
+          "pjit": 12,
+          "program_id": 2,
+          "psum": 1,
+          "reduce_sum": 5,
+          "rsqrt": 2,
+          "select_n": 2,
+          "shard_map": 1,
+          "slice": 4,
+          "sub": 3,
+          "swap": 5
+        },
+        "rsqrt": 2,
+        "scope": "all nested JAX, shard_map, custom derivative and Pallas programs; static instruction sites, not scalar operations"
+      },
+      "hlo": {
+        "pure": true,
+        "forbidden": {},
+        "opcodes": {
+          "add": 2,
+          "all-reduce": 1,
+          "constant": 2,
+          "copy": 7,
+          "copy-done": 1,
+          "copy-start": 1,
+          "custom-call": 4,
+          "get-tuple-element": 4,
+          "pad": 4,
+          "parameter": 9,
+          "reduce": 1,
+          "slice": 3,
+          "slice-done": 12,
+          "slice-start": 12,
+          "tuple": 1
+        },
+        "rsqrt": 0,
+        "opaque_custom_calls": 4
+      },
+      "passed": true,
+      "latency_ratio_to_standard": 1.2791410055287507
+    },
+    {
+      "scale": "vit-b16",
+      "arm": "algebraic_v2",
+      "dtype": "bfloat16",
+      "shape": [
+        1024,
+        12,
+        196,
+        64
+      ],
+      "matmul_precision": "bfloat16",
+      "forward_ms": 1.3181999966036528,
+      "backward_ms": 2.208165475167334,
+      "forward_max_abs_error": 0.001953125,
+      "gradient_errors_q_k_v_margin": [
+        {
+          "max_abs": 0.0078125,
+          "relative_l2": 0.0015677503542974591
+        },
+        {
+          "max_abs": 0.0078125,
+          "relative_l2": 0.001586988801136613
+        },
+        {
+          "max_abs": 0.00390625,
+          "relative_l2": 4.851079938816838e-05
+        },
+        {
+          "max_abs": 0.004442036151885986,
+          "relative_l2": 0.0015134456334635615
+        }
+      ],
+      "forward_relative_l2_error": 4.7513600293314084e-05,
+      "forward_abs_bound": 0.03375,
+      "forward_relative_bound": 0.01,
+      "gradient_relative_bound": 0.03,
+      "nested_programs": {
+        "pure": true,
+        "forbidden": {},
+        "primitives": {
+          "add": 8,
+          "broadcast_in_dim": 9,
+          "convert_element_type": 14,
+          "custom_vjp_call": 1,
+          "div": 6,
+          "dot_general": 7,
+          "ge": 2,
+          "get": 9,
+          "iota": 2,
+          "lt": 2,
+          "min": 2,
+          "mul": 27,
+          "neg": 1,
+          "pad": 1,
+          "pallas_call": 2,
+          "pjit": 12,
+          "program_id": 2,
+          "psum": 1,
+          "reduce_sum": 5,
+          "rsqrt": 2,
+          "select_n": 2,
+          "shard_map": 1,
+          "slice": 4,
+          "sub": 3,
+          "swap": 5
+        },
+        "rsqrt": 2,
+        "scope": "all nested JAX, shard_map, custom derivative and Pallas programs; static instruction sites, not scalar operations"
+      },
+      "hlo": {
+        "pure": true,
+        "forbidden": {},
+        "opcodes": {
+          "add": 2,
+          "all-reduce": 1,
+          "constant": 2,
+          "copy": 7,
+          "copy-done": 1,
+          "copy-start": 1,
+          "custom-call": 4,
+          "get-tuple-element": 4,
+          "pad": 4,
+          "parameter": 9,
+          "reduce": 1,
+          "slice": 3,
+          "slice-done": 12,
+          "slice-start": 12,
+          "tuple": 1
+        },
+        "rsqrt": 0,
+        "opaque_custom_calls": 4
+      },
+      "passed": true,
+      "latency_ratio_to_standard": 1.272415313939258
+    },
+    {
+      "scale": "vit-b16",
+      "arm": "flash_standard",
+      "dtype": "bfloat16",
+      "shape": [
+        1024,
+        12,
+        196,
+        64
+      ],
+      "matmul_precision": "bfloat16",
+      "forward_ms": 1.5864050074014813,
+      "backward_ms": 1.6922600334510207,
+      "forward_max_abs_error": 0.015625,
+      "gradient_errors_q_k_v_margin": [
+        {
+          "max_abs": 0.015625,
+          "relative_l2": 0.0015748892910778522
+        },
+        {
+          "max_abs": 0.015625,
+          "relative_l2": 0.0015889768255874515
+        },
+        {
+          "max_abs": 0.00390625,
+          "relative_l2": 4.5780678192386404e-05
+        },
+        {
+          "max_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      ],
+      "forward_relative_l2_error": 0.003019981551915407,
+      "forward_abs_bound": 0.041875,
+      "forward_relative_bound": 0.01,
+      "gradient_relative_bound": 0.03,
+      "nested_programs": {
+        "pure": false,
+        "forbidden": {
+          "exp": 3
+        },
+        "primitives": {
+          "add": 5,
+          "broadcast_in_dim": 20,
+          "convert_element_type": 17,
+          "div": 2,
+          "dot_general": 7,
+          "exp": 3,
+          "get": 8,
+          "iota": 2,
+          "lt": 2,
+          "max": 1,
+          "mul": 13,
+          "pad": 2,
+          "pallas_call": 2,
+          "pjit": 10,
+          "program_id": 1,
+          "psum": 1,
+          "reduce_max": 2,
+          "reduce_sum": 5,
+          "scan": 1,
+          "select_n": 2,
+          "shard_map": 1,
+          "slice": 4,
+          "sub": 4,
+          "swap": 5
+        },
+        "rsqrt": 0,
+        "scope": "all nested JAX, shard_map, custom derivative and Pallas programs; static instruction sites, not scalar operations"
+      },
+      "hlo": {
+        "pure": true,
+        "forbidden": {},
+        "opcodes": {
+          "add": 1,
+          "all-reduce": 1,
+          "broadcast": 1,
+          "constant": 2,
+          "copy": 7,
+          "custom-call": 4,
+          "get-tuple-element": 3,
+          "pad": 4,
+          "parameter": 6,
+          "slice": 3,
+          "slice-done": 12,
+          "slice-start": 12,
+          "tuple": 1
+        },
+        "rsqrt": 0,
+        "opaque_custom_calls": 4
+      },
+      "passed": true,
+      "latency_ratio_to_standard": 1.1830377879587344
+    },
+    {
+      "scale": "vit-b16",
+      "arm": "rational_ablation",
+      "dtype": "bfloat16",
+      "shape": [
+        1024,
+        12,
+        196,
+        64
+      ],
+      "matmul_precision": "bfloat16",
+      "forward_ms": 1.1148744961246848,
+      "backward_ms": 2.297414524946362,
+      "forward_max_abs_error": 0.001953125,
+      "gradient_errors_q_k_v_margin": [
+        {
+          "max_abs": 0.0625,
+          "relative_l2": 0.0015344878192991018
+        },
+        {
+          "max_abs": 0.09375,
+          "relative_l2": 0.001554757822304964
+        },
+        {
+          "max_abs": 0.001953125,
+          "relative_l2": 4.722268204204738e-05
+        },
+        {
+          "max_abs": 1.201324462890625,
+          "relative_l2": 0.0021839437540620565
+        }
+      ],
+      "forward_relative_l2_error": 4.5847034925827757e-05,
+      "forward_abs_bound": 0.02375,
+      "forward_relative_bound": 0.01,
+      "gradient_relative_bound": 0.03,
+      "nested_programs": {
+        "pure": true,
+        "forbidden": {},
+        "primitives": {
+          "add": 2,
+          "and": 1,
+          "broadcast_in_dim": 13,
+          "convert_element_type": 18,
+          "div": 5,
+          "dot_general": 7,
+          "eq": 2,
+          "get": 9,
+          "gt": 1,
+          "iota": 2,
+          "lt": 3,
+          "max": 1,
+          "min": 1,
+          "mul": 17,
+          "neg": 1,
+          "or": 1,
+          "pad": 2,
+          "pallas_call": 2,
+          "pjit": 14,
+          "program_id": 2,
+          "psum": 1,
+          "reduce_sum": 6,
+          "select_n": 3,
+          "shard_map": 1,
+          "slice": 4,
+          "sub": 4,
+          "swap": 5
+        },
+        "rsqrt": 0,
+        "scope": "all nested JAX, shard_map, custom derivative and Pallas programs; static instruction sites, not scalar operations"
+      },
+      "hlo": {
+        "pure": true,
+        "forbidden": {},
+        "opcodes": {
+          "add": 2,
+          "all-reduce": 1,
+          "constant": 2,
+          "copy": 7,
+          "copy-done": 1,
+          "copy-start": 1,
+          "custom-call": 4,
+          "get-tuple-element": 4,
+          "pad": 4,
+          "parameter": 9,
+          "reduce": 1,
+          "slice": 3,
+          "slice-done": 12,
+          "slice-start": 12,
+          "tuple": 1
+        },
+        "rsqrt": 0,
+        "opaque_custom_calls": 4
+      },
+      "passed": true,
+      "latency_ratio_to_standard": 1.2312532097862976
+    },
+    {
+      "scale": "vit-l16",
+      "arm": "standard",
+      "dtype": "float32",
+      "shape": [
+        512,
+        16,
+        196,
+        64
+      ],
+      "matmul_precision": "float32",
+      "forward_ms": 1.190909999422729,
+      "backward_ms": 2.383565006311983,
+      "forward_max_abs_error": 4.76837158203125e-07,
+      "gradient_errors_q_k_v_margin": [
+        {
+          "max_abs": 7.152557373046875e-07,
+          "relative_l2": 1.336028532250566e-07
+        },
+        {
+          "max_abs": 5.960464477539062e-07,
+          "relative_l2": 1.3108900986935623e-07
+        },
+        {
+          "max_abs": 3.5762786865234375e-07,
+          "relative_l2": 1.1753475348541542e-07
+        },
+        {
+          "max_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      ],
+      "forward_relative_l2_error": 1.1707496128110506e-07,
+      "forward_abs_bound": 5e-05,
+      "forward_relative_bound": 0.0001,
+      "gradient_relative_bound": 0.001,
+      "nested_programs": {
+        "pure": false,
+        "forbidden": {
+          "exp": 2
+        },
+        "primitives": {
+          "add": 2,
+          "broadcast_in_dim": 14,
+          "convert_element_type": 2,
+          "custom_vjp_call": 1,
+          "div": 2,
+          "dot_general": 7,
+          "exp": 2,
+          "get": 9,
+          "iota": 2,
+          "lt": 2,
+          "mul": 9,
+          "pad": 1,
+          "pallas_call": 2,
+          "pjit": 10,
+          "program_id": 2,
+          "psum": 1,
+          "reduce_max": 2,
+          "reduce_sum": 5,
+          "select_n": 1,
+          "shard_map": 1,
+          "slice": 4,
+          "sub": 3,
+          "swap": 5
+        },
+        "rsqrt": 0,
+        "scope": "all nested JAX, shard_map, custom derivative and Pallas programs; static instruction sites, not scalar operations"
+      },
+      "hlo": {
+        "pure": true,
+        "forbidden": {},
+        "opcodes": {
+          "add": 2,
+          "all-reduce": 1,
+          "constant": 1,
+          "copy": 7,
+          "custom-call": 2,
+          "get-tuple-element": 4,
+          "pad": 4,
+          "parameter": 9,
+          "reduce": 1,
+          "slice": 3,
+          "slice-done": 4,
+          "slice-start": 4,
+          "tuple": 1
+        },
+        "rsqrt": 0,
+        "opaque_custom_calls": 2
+      },
+      "passed": true,
+      "latency_ratio_to_standard": 1.0
+    },
+    {
+      "scale": "vit-l16",
+      "arm": "algebraic",
+      "dtype": "float32",
+      "shape": [
+        512,
+        16,
+        196,
+        64
+      ],
+      "matmul_precision": "float32",
+      "forward_ms": 1.4235645066946745,
+      "backward_ms": 2.632030053064227,
+      "forward_max_abs_error": 4.76837158203125e-07,
+      "gradient_errors_q_k_v_margin": [
+        {
+          "max_abs": 3.5762786865234375e-07,
+          "relative_l2": 1.3496638473498024e-07
+        },
+        {
+          "max_abs": 4.76837158203125e-07,
+          "relative_l2": 1.3335561277472152e-07
+        },
+        {
+          "max_abs": 3.5762786865234375e-07,
+          "relative_l2": 1.1991289738944033e-07
+        },
+        {
+          "max_abs": 5.066394805908203e-07,
+          "relative_l2": 3.2692346962903684e-07
+        }
+      ],
+      "forward_relative_l2_error": 1.1946106326377048e-07,
+      "forward_abs_bound": 5e-05,
+      "forward_relative_bound": 0.0001,
+      "gradient_relative_bound": 0.001,
+      "nested_programs": {
+        "pure": true,
+        "forbidden": {},
+        "primitives": {
+          "add": 8,
+          "broadcast_in_dim": 9,
+          "convert_element_type": 2,
+          "custom_vjp_call": 1,
+          "div": 6,
+          "dot_general": 7,
+          "ge": 2,
+          "get": 9,
+          "iota": 2,
+          "lt": 2,
+          "min": 2,
+          "mul": 27,
+          "neg": 1,
+          "pad": 1,
+          "pallas_call": 2,
+          "pjit": 12,
+          "program_id": 2,
+          "psum": 1,
+          "reduce_sum": 5,
+          "rsqrt": 2,
+          "select_n": 2,
+          "shard_map": 1,
+          "slice": 4,
+          "sub": 3,
+          "swap": 5
+        },
+        "rsqrt": 2,
+        "scope": "all nested JAX, shard_map, custom derivative and Pallas programs; static instruction sites, not scalar operations"
+      },
+      "hlo": {
+        "pure": true,
+        "forbidden": {},
+        "opcodes": {
+          "add": 2,
+          "all-reduce": 1,
+          "constant": 1,
+          "copy": 7,
+          "custom-call": 2,
+          "get-tuple-element": 4,
+          "pad": 4,
+          "parameter": 9,
+          "reduce": 1,
+          "slice": 3,
+          "slice-done": 4,
+          "slice-start": 4,
+          "tuple": 1
+        },
+        "rsqrt": 0,
+        "opaque_custom_calls": 2
+      },
+      "passed": true,
+      "latency_ratio_to_standard": 1.1345986622517448
+    },
+    {
+      "scale": "vit-l16",
+      "arm": "algebraic_v2",
+      "dtype": "float32",
+      "shape": [
+        512,
+        16,
+        196,
+        64
+      ],
+      "matmul_precision": "float32",
+      "forward_ms": 1.4066154544707388,
+      "backward_ms": 2.615849516587332,
+      "forward_max_abs_error": 4.76837158203125e-07,
+      "gradient_errors_q_k_v_margin": [
+        {
+          "max_abs": 3.5762786865234375e-07,
+          "relative_l2": 1.3496638473498024e-07
+        },
+        {
+          "max_abs": 4.76837158203125e-07,
+          "relative_l2": 1.3335561277472152e-07
+        },
+        {
+          "max_abs": 3.5762786865234375e-07,
+          "relative_l2": 1.1991289738944033e-07
+        },
+        {
+          "max_abs": 5.066394805908203e-07,
+          "relative_l2": 3.2692346962903684e-07
+        }
+      ],
+      "forward_relative_l2_error": 1.1946106326377048e-07,
+      "forward_abs_bound": 5e-05,
+      "forward_relative_bound": 0.0001,
+      "gradient_relative_bound": 0.001,
+      "nested_programs": {
+        "pure": true,
+        "forbidden": {},
+        "primitives": {
+          "add": 8,
+          "broadcast_in_dim": 9,
+          "convert_element_type": 2,
+          "custom_vjp_call": 1,
+          "div": 6,
+          "dot_general": 7,
+          "ge": 2,
+          "get": 9,
+          "iota": 2,
+          "lt": 2,
+          "min": 2,
+          "mul": 27,
+          "neg": 1,
+          "pad": 1,
+          "pallas_call": 2,
+          "pjit": 12,
+          "program_id": 2,
+          "psum": 1,
+          "reduce_sum": 5,
+          "rsqrt": 2,
+          "select_n": 2,
+          "shard_map": 1,
+          "slice": 4,
+          "sub": 3,
+          "swap": 5
+        },
+        "rsqrt": 2,
+        "scope": "all nested JAX, shard_map, custom derivative and Pallas programs; static instruction sites, not scalar operations"
+      },
+      "hlo": {
+        "pure": true,
+        "forbidden": {},
+        "opcodes": {
+          "add": 2,
+          "all-reduce": 1,
+          "constant": 1,
+          "copy": 7,
+          "custom-call": 2,
+          "get-tuple-element": 4,
+          "pad": 4,
+          "parameter": 9,
+          "reduce": 1,
+          "slice": 3,
+          "slice-done": 4,
+          "slice-start": 4,
+          "tuple": 1
+        },
+        "rsqrt": 0,
+        "opaque_custom_calls": 2
+      },
+      "passed": true,
+      "latency_ratio_to_standard": 1.125330283357591
+    },
+    {
+      "scale": "vit-l16",
+      "arm": "flash_standard",
+      "dtype": "float32",
+      "shape": [
+        512,
+        16,
+        196,
+        64
+      ],
+      "matmul_precision": "float32",
+      "forward_ms": 1.6365799820050597,
+      "backward_ms": 2.2780394938308746,
+      "forward_max_abs_error": 2.205371856689453e-06,
+      "gradient_errors_q_k_v_margin": [
+        {
+          "max_abs": 7.152557373046875e-07,
+          "relative_l2": 1.336028532250566e-07
+        },
+        {
+          "max_abs": 5.960464477539062e-07,
+          "relative_l2": 1.3108900986935623e-07
+        },
+        {
+          "max_abs": 3.5762786865234375e-07,
+          "relative_l2": 1.1753475348541542e-07
+        },
+        {
+          "max_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      ],
+      "forward_relative_l2_error": 8.672593594383216e-07,
+      "forward_abs_bound": 5e-05,
+      "forward_relative_bound": 0.0001,
+      "gradient_relative_bound": 0.001,
+      "nested_programs": {
+        "pure": false,
+        "forbidden": {
+          "exp": 3
+        },
+        "primitives": {
+          "add": 5,
+          "broadcast_in_dim": 20,
+          "convert_element_type": 5,
+          "div": 2,
+          "dot_general": 7,
+          "exp": 3,
+          "get": 8,
+          "iota": 2,
+          "lt": 2,
+          "max": 1,
+          "mul": 13,
+          "pad": 2,
+          "pallas_call": 2,
+          "pjit": 10,
+          "program_id": 1,
+          "psum": 1,
+          "reduce_max": 2,
+          "reduce_sum": 5,
+          "scan": 1,
+          "select_n": 2,
+          "shard_map": 1,
+          "slice": 4,
+          "sub": 4,
+          "swap": 5
+        },
+        "rsqrt": 0,
+        "scope": "all nested JAX, shard_map, custom derivative and Pallas programs; static instruction sites, not scalar operations"
+      },
+      "hlo": {
+        "pure": true,
+        "forbidden": {},
+        "opcodes": {
+          "add": 1,
+          "all-reduce": 1,
+          "broadcast": 1,
+          "constant": 1,
+          "copy": 7,
+          "copy-done": 1,
+          "copy-start": 1,
+          "custom-call": 1,
+          "get-tuple-element": 3,
+          "pad": 4,
+          "parameter": 6,
+          "slice": 3,
+          "tuple": 1
+        },
+        "rsqrt": 0,
+        "opaque_custom_calls": 1
+      },
+      "passed": true,
+      "latency_ratio_to_standard": 1.0951592806091834
+    },
+    {
+      "scale": "vit-l16",
+      "arm": "rational_ablation",
+      "dtype": "float32",
+      "shape": [
+        512,
+        16,
+        196,
+        64
+      ],
+      "matmul_precision": "float32",
+      "forward_ms": 1.2786145089194179,
+      "backward_ms": 2.6479149819351733,
+      "forward_max_abs_error": 2.384185791015625e-07,
+      "gradient_errors_q_k_v_margin": [
+        {
+          "max_abs": 5.7220458984375e-06,
+          "relative_l2": 1.6917751111122925e-07
+        },
+        {
+          "max_abs": 5.7220458984375e-06,
+          "relative_l2": 1.6651146950152906e-07
+        },
+        {
+          "max_abs": 2.384185791015625e-07,
+          "relative_l2": 1.196933823166546e-07
+        },
+        {
+          "max_abs": 0.001007080078125,
+          "relative_l2": 1.7523664155305596e-06
+        }
+      ],
+      "forward_relative_l2_error": 1.1644069530802881e-07,
+      "forward_abs_bound": 5e-05,
+      "forward_relative_bound": 0.0001,
+      "gradient_relative_bound": 0.001,
+      "nested_programs": {
+        "pure": true,
+        "forbidden": {},
+        "primitives": {
+          "add": 2,
+          "and": 1,
+          "broadcast_in_dim": 13,
+          "convert_element_type": 6,
+          "div": 5,
+          "dot_general": 7,
+          "eq": 2,
+          "get": 9,
+          "gt": 1,
+          "iota": 2,
+          "lt": 3,
+          "max": 1,
+          "min": 1,
+          "mul": 17,
+          "neg": 1,
+          "or": 1,
+          "pad": 2,
+          "pallas_call": 2,
+          "pjit": 14,
+          "program_id": 2,
+          "psum": 1,
+          "reduce_sum": 6,
+          "select_n": 3,
+          "shard_map": 1,
+          "slice": 4,
+          "sub": 4,
+          "swap": 5
+        },
+        "rsqrt": 0,
+        "scope": "all nested JAX, shard_map, custom derivative and Pallas programs; static instruction sites, not scalar operations"
+      },
+      "hlo": {
+        "pure": true,
+        "forbidden": {},
+        "opcodes": {
+          "add": 2,
+          "all-reduce": 1,
+          "constant": 1,
+          "copy": 7,
+          "custom-call": 2,
+          "get-tuple-element": 4,
+          "pad": 4,
+          "parameter": 9,
+          "reduce": 1,
+          "slice": 3,
+          "slice-done": 4,
+          "slice-start": 4,
+          "tuple": 1
+        },
+        "rsqrt": 0,
+        "opaque_custom_calls": 2
+      },
+      "passed": true,
+      "latency_ratio_to_standard": 1.0984912426454403
+    },
+    {
+      "scale": "vit-l16",
+      "arm": "standard",
+      "dtype": "bfloat16",
+      "shape": [
+        512,
+        16,
+        196,
+        64
+      ],
+      "matmul_precision": "bfloat16",
+      "forward_ms": 0.7323799945879728,
+      "backward_ms": 1.3073099835310131,
+      "forward_max_abs_error": 0.00390625,
+      "gradient_errors_q_k_v_margin": [
+        {
+          "max_abs": 0.03125,
+          "relative_l2": 0.0015778295928612351
+        },
+        {
+          "max_abs": 0.015625,
+          "relative_l2": 0.0015907972119748592
+        },
+        {
+          "max_abs": 0.00390625,
+          "relative_l2": 4.5705895900027826e-05
+        },
+        {
+          "max_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      ],
+      "forward_relative_l2_error": 4.594441634253599e-05,
+      "forward_abs_bound": 0.0384375,
+      "forward_relative_bound": 0.01,
+      "gradient_relative_bound": 0.03,
+      "nested_programs": {
+        "pure": false,
+        "forbidden": {
+          "exp": 2
+        },
+        "primitives": {
+          "add": 2,
+          "broadcast_in_dim": 14,
+          "convert_element_type": 14,
+          "custom_vjp_call": 1,
+          "div": 2,
+          "dot_general": 7,
+          "exp": 2,
+          "get": 9,
+          "iota": 2,
+          "lt": 2,
+          "mul": 9,
+          "pad": 1,
+          "pallas_call": 2,
+          "pjit": 10,
+          "program_id": 2,
+          "psum": 1,
+          "reduce_max": 2,
+          "reduce_sum": 5,
+          "select_n": 1,
+          "shard_map": 1,
+          "slice": 4,
+          "sub": 3,
+          "swap": 5
+        },
+        "rsqrt": 0,
+        "scope": "all nested JAX, shard_map, custom derivative and Pallas programs; static instruction sites, not scalar operations"
+      },
+      "hlo": {
+        "pure": true,
+        "forbidden": {},
+        "opcodes": {
+          "add": 2,
+          "all-reduce": 1,
+          "constant": 2,
+          "copy": 7,
+          "custom-call": 6,
+          "get-tuple-element": 4,
+          "pad": 4,
+          "parameter": 9,
+          "reduce": 1,
+          "slice": 3,
+          "slice-done": 20,
+          "slice-start": 20,
+          "tuple": 1
+        },
+        "rsqrt": 0,
+        "opaque_custom_calls": 6
+      },
+      "passed": true,
+      "latency_ratio_to_standard": 1.0
+    },
+    {
+      "scale": "vit-l16",
+      "arm": "algebraic",
+      "dtype": "bfloat16",
+      "shape": [
+        512,
+        16,
+        196,
+        64
+      ],
+      "matmul_precision": "bfloat16",
+      "forward_ms": 0.9600604826118797,
+      "backward_ms": 1.6005649813450873,
+      "forward_max_abs_error": 0.001953125,
+      "gradient_errors_q_k_v_margin": [
+        {
+          "max_abs": 0.015625,
+          "relative_l2": 0.0015675664180889726
+        },
+        {
+          "max_abs": 0.0078125,
+          "relative_l2": 0.0015860553830862045
+        },
+        {
+          "max_abs": 0.00390625,
+          "relative_l2": 4.652832285501063e-05
+        },
+        {
+          "max_abs": 0.0036364197731018066,
+          "relative_l2": 0.0020459641236811876
+        }
+      ],
+      "forward_relative_l2_error": 4.59207221865654e-05,
+      "forward_abs_bound": 0.0303125,
+      "forward_relative_bound": 0.01,
+      "gradient_relative_bound": 0.03,
+      "nested_programs": {
+        "pure": true,
+        "forbidden": {},
+        "primitives": {
+          "add": 8,
+          "broadcast_in_dim": 9,
+          "convert_element_type": 14,
+          "custom_vjp_call": 1,
+          "div": 6,
+          "dot_general": 7,
+          "ge": 2,
+          "get": 9,
+          "iota": 2,
+          "lt": 2,
+          "min": 2,
+          "mul": 27,
+          "neg": 1,
+          "pad": 1,
+          "pallas_call": 2,
+          "pjit": 12,
+          "program_id": 2,
+          "psum": 1,
+          "reduce_sum": 5,
+          "rsqrt": 2,
+          "select_n": 2,
+          "shard_map": 1,
+          "slice": 4,
+          "sub": 3,
+          "swap": 5
+        },
+        "rsqrt": 2,
+        "scope": "all nested JAX, shard_map, custom derivative and Pallas programs; static instruction sites, not scalar operations"
+      },
+      "hlo": {
+        "pure": true,
+        "forbidden": {},
+        "opcodes": {
+          "add": 2,
+          "all-reduce": 1,
+          "constant": 2,
+          "copy": 7,
+          "custom-call": 6,
+          "get-tuple-element": 4,
+          "pad": 4,
+          "parameter": 9,
+          "reduce": 1,
+          "slice": 3,
+          "slice-done": 20,
+          "slice-start": 20,
+          "tuple": 1
+        },
+        "rsqrt": 0,
+        "opaque_custom_calls": 6
+      },
+      "passed": true,
+      "latency_ratio_to_standard": 1.2553993456978156
+    },
+    {
+      "scale": "vit-l16",
+      "arm": "algebraic_v2",
+      "dtype": "bfloat16",
+      "shape": [
+        512,
+        16,
+        196,
+        64
+      ],
+      "matmul_precision": "bfloat16",
+      "forward_ms": 0.9555700235068798,
+      "backward_ms": 1.6102995141409338,
+      "forward_max_abs_error": 0.001953125,
+      "gradient_errors_q_k_v_margin": [
+        {
+          "max_abs": 0.015625,
+          "relative_l2": 0.0015675664180889726
+        },
+        {
+          "max_abs": 0.0078125,
+          "relative_l2": 0.0015860553830862045
+        },
+        {
+          "max_abs": 0.00390625,
+          "relative_l2": 4.652832285501063e-05
+        },
+        {
+          "max_abs": 0.0036364197731018066,
+          "relative_l2": 0.0020459641236811876
+        }
+      ],
+      "forward_relative_l2_error": 4.59207221865654e-05,
+      "forward_abs_bound": 0.0303125,
+      "forward_relative_bound": 0.01,
+      "gradient_relative_bound": 0.03,
+      "nested_programs": {
+        "pure": true,
+        "forbidden": {},
+        "primitives": {
+          "add": 8,
+          "broadcast_in_dim": 9,
+          "convert_element_type": 14,
+          "custom_vjp_call": 1,
+          "div": 6,
+          "dot_general": 7,
+          "ge": 2,
+          "get": 9,
+          "iota": 2,
+          "lt": 2,
+          "min": 2,
+          "mul": 27,
+          "neg": 1,
+          "pad": 1,
+          "pallas_call": 2,
+          "pjit": 12,
+          "program_id": 2,
+          "psum": 1,
+          "reduce_sum": 5,
+          "rsqrt": 2,
+          "select_n": 2,
+          "shard_map": 1,
+          "slice": 4,
+          "sub": 3,
+          "swap": 5
+        },
+        "rsqrt": 2,
+        "scope": "all nested JAX, shard_map, custom derivative and Pallas programs; static instruction sites, not scalar operations"
+      },
+      "hlo": {
+        "pure": true,
+        "forbidden": {},
+        "opcodes": {
+          "add": 2,
+          "all-reduce": 1,
+          "constant": 2,
+          "copy": 7,
+          "custom-call": 6,
+          "get-tuple-element": 4,
+          "pad": 4,
+          "parameter": 9,
+          "reduce": 1,
+          "slice": 3,
+          "slice-done": 20,
+          "slice-start": 20,
+          "tuple": 1
+        },
+        "rsqrt": 0,
+        "opaque_custom_calls": 6
+      },
+      "passed": true,
+      "latency_ratio_to_standard": 1.2579703607771184
+    },
+    {
+      "scale": "vit-l16",
+      "arm": "flash_standard",
+      "dtype": "bfloat16",
+      "shape": [
+        512,
+        16,
+        196,
+        64
+      ],
+      "matmul_precision": "bfloat16",
+      "forward_ms": 1.1301249905955046,
+      "backward_ms": 1.2667544942814857,
+      "forward_max_abs_error": 0.0078125,
+      "gradient_errors_q_k_v_margin": [
+        {
+          "max_abs": 0.03125,
+          "relative_l2": 0.0015778295928612351
+        },
+        {
+          "max_abs": 0.015625,
+          "relative_l2": 0.0015907972119748592
+        },
+        {
+          "max_abs": 0.00390625,
+          "relative_l2": 4.5705895900027826e-05
+        },
+        {
+          "max_abs": 0.0,
+          "relative_l2": 0.0
+        }
+      ],
+      "forward_relative_l2_error": 0.0030206292867660522,
+      "forward_abs_bound": 0.0384375,
+      "forward_relative_bound": 0.01,
+      "gradient_relative_bound": 0.03,
+      "nested_programs": {
+        "pure": false,
+        "forbidden": {
+          "exp": 3
+        },
+        "primitives": {
+          "add": 5,
+          "broadcast_in_dim": 20,
+          "convert_element_type": 17,
+          "div": 2,
+          "dot_general": 7,
+          "exp": 3,
+          "get": 8,
+          "iota": 2,
+          "lt": 2,
+          "max": 1,
+          "mul": 13,
+          "pad": 2,
+          "pallas_call": 2,
+          "pjit": 10,
+          "program_id": 1,
+          "psum": 1,
+          "reduce_max": 2,
+          "reduce_sum": 5,
+          "scan": 1,
+          "select_n": 2,
+          "shard_map": 1,
+          "slice": 4,
+          "sub": 4,
+          "swap": 5
+        },
+        "rsqrt": 0,
+        "scope": "all nested JAX, shard_map, custom derivative and Pallas programs; static instruction sites, not scalar operations"
+      },
+      "hlo": {
+        "pure": true,
+        "forbidden": {},
+        "opcodes": {
+          "add": 1,
+          "all-reduce": 1,
+          "broadcast": 1,
+          "constant": 2,
+          "copy": 7,
+          "copy-done": 1,
+          "copy-start": 1,
+          "custom-call": 4,
+          "get-tuple-element": 3,
+          "pad": 4,
+          "parameter": 6,
+          "slice": 3,
+          "slice-done": 12,
+          "slice-start": 12,
+          "tuple": 1
+        },
+        "rsqrt": 0,
+        "opaque_custom_calls": 4
+      },
+      "passed": true,
+      "latency_ratio_to_standard": 1.1751195086458222
+    },
+    {
+      "scale": "vit-l16",
+      "arm": "rational_ablation",
+      "dtype": "bfloat16",
+      "shape": [
+        512,
+        16,
+        196,
+        64
+      ],
+      "matmul_precision": "bfloat16",
+      "forward_ms": 0.8182345191016793,
+      "backward_ms": 1.6427450173068792,
+      "forward_max_abs_error": 0.001953125,
+      "gradient_errors_q_k_v_margin": [
+        {
+          "max_abs": 0.125,
+          "relative_l2": 0.0015348766464740038
+        },
+        {
+          "max_abs": 0.0625,
+          "relative_l2": 0.0015555017162114382
+        },
+        {
+          "max_abs": 0.001953125,
+          "relative_l2": 4.807718869415112e-05
+        },
+        {
+          "max_abs": 0.846649169921875,
+          "relative_l2": 0.0010861027985811234
+        }
+      ],
+      "forward_relative_l2_error": 4.583095505950041e-05,
+      "forward_abs_bound": 0.025937500000000002,
+      "forward_relative_bound": 0.01,
+      "gradient_relative_bound": 0.03,
+      "nested_programs": {
+        "pure": true,
+        "forbidden": {},
+        "primitives": {
+          "add": 2,
+          "and": 1,
+          "broadcast_in_dim": 13,
+          "convert_element_type": 18,
+          "div": 5,
+          "dot_general": 7,
+          "eq": 2,
+          "get": 9,
+          "gt": 1,
+          "iota": 2,
+          "lt": 3,
+          "max": 1,
+          "min": 1,
+          "mul": 17,
+          "neg": 1,
+          "or": 1,
+          "pad": 2,
+          "pallas_call": 2,
+          "pjit": 14,
+          "program_id": 2,
+          "psum": 1,
+          "reduce_sum": 6,
+          "select_n": 3,
+          "shard_map": 1,
+          "slice": 4,
+          "sub": 4,
+          "swap": 5
+        },
+        "rsqrt": 0,
+        "scope": "all nested JAX, shard_map, custom derivative and Pallas programs; static instruction sites, not scalar operations"
+      },
+      "hlo": {
+        "pure": true,
+        "forbidden": {},
+        "opcodes": {
+          "add": 2,
+          "all-reduce": 1,
+          "constant": 2,
+          "copy": 7,
+          "custom-call": 6,
+          "get-tuple-element": 4,
+          "pad": 4,
+          "parameter": 9,
+          "reduce": 1,
+          "slice": 3,
+          "slice-done": 20,
+          "slice-start": 20,
+          "tuple": 1
+        },
+        "rsqrt": 0,
+        "opaque_custom_calls": 6
+      },
+      "passed": true,
+      "latency_ratio_to_standard": 1.2065458784467276
+    }
+  ]
+}

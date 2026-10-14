@@ -32,7 +32,7 @@ from jax.sharding import Mesh, NamedSharding, PartitionSpec as P
 
 from algebraic_vision import augment, data, losses
 from algebraic_vision.model import (algebraic_config, count_params, forward,
-                                    init_params, standard_config)
+                                    init_params, standard_config, algebraic_v2_config)
 
 
 @dataclass
@@ -74,8 +74,10 @@ class TrainConfig:
     distributed: bool = False
 
     def resolved_loss(self):
-        if self.arm not in ("standard", "algebraic"):
+        if self.arm not in ("standard", "algebraic", "algebraic_v2"):
             raise ValueError(f"unknown arm {self.arm!r}")
+        if self.arm == "algebraic_v2":
+            return self.loss or "v2_power"
         algebraic_loss = self.arm == "algebraic"
         return self.loss or ("power" if algebraic_loss else "ce")
 
@@ -89,7 +91,8 @@ def build_model_config(cfg):
     cfg.resolved_loss()  # Validate the arm before init.
     overrides = dict(cfg.model)
     overrides.setdefault("image_size", cfg.image_size)
-    make = standard_config if cfg.arm == "standard" else algebraic_config
+    make = {"standard": standard_config, "algebraic": algebraic_config,
+            "algebraic_v2": algebraic_v2_config}[cfg.arm]
     return make(**overrides)
 
 
@@ -104,6 +107,11 @@ def loss_and_probs(cfg):
 
         def probs(logits):
             return jax.nn.softmax(logits.astype(jnp.float32), axis=-1)
+    elif kind == "v2_power":
+        from algebraic_vision.v2 import power_score, probabilities
+        def train_loss(logits, labels):
+            return power_score(logits, labels, cfg.label_smoothing, cfg.loss_backend)
+        probs = probabilities
     elif kind == "fy_squareplus":
         def train_loss(logits, labels):
             return losses.squareplus_fy(logits, labels, cfg.label_smoothing)
